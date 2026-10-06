@@ -82,9 +82,10 @@ p { margin: 0; }
 .preloader img {
   width: 96px; height: auto;
   /* sweeps in from the stroke tips up to the curl, then glows */
-  clip-path: inset(0 100% 0 0); animation: pre-draw 800ms cubic-bezier(0.65, 0, 0.35, 1) forwards, pre-glow-img 900ms ease 500ms forwards;
+  /* the reveal ends beyond the image's edges so the glow isn't clipped */
+  clip-path: inset(100% 100% -40% -40%); animation: pre-draw 800ms cubic-bezier(0.65, 0, 0.35, 1) forwards, pre-glow-img 900ms ease 500ms forwards;
 }
-@keyframes pre-draw { from { clip-path: inset(100% 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes pre-draw { from { clip-path: inset(100% 100% -40% -40%); } to { clip-path: inset(-40% -40% -40% -40%); } }
 @keyframes pre-glow-img { 0% { filter: none; } 60% { filter: drop-shadow(0 0 22px rgba(230, 180, 240, 0.95)); } 100% { filter: drop-shadow(0 0 12px rgba(230, 180, 240, 0.6)); } }
 .preloader.done { opacity: 0; visibility: hidden; }
 @keyframes pre-glow {
@@ -112,7 +113,13 @@ p { margin: 0; }
   clip-path: inset(0 100% 0 0);
   transition: max-width 450ms var(--ease), margin-left 450ms var(--ease), opacity 250ms ease, clip-path 450ms var(--ease);
 }
-.logo:hover .logo-name, .logo:focus-visible .logo-name { max-width: 170px; margin-left: 12px; opacity: 1; clip-path: inset(-24px -40px -24px -24px); }
+/* Only on devices with a real mouse and room for it: on phones a tap would "stick" the hover */
+@media (hover: hover) and (min-width: 600px) {
+  .logo:hover .logo-name { max-width: 170px; margin-left: 12px; opacity: 1; clip-path: inset(-24px -40px -24px -24px); }
+}
+@media (min-width: 600px) {
+  .logo:focus-visible .logo-name { max-width: 170px; margin-left: 12px; opacity: 1; clip-path: inset(-24px -40px -24px -24px); }
+}
 .hello-name { font-family: var(--round); color: #fff; }
 .links { display: flex; gap: 2px; margin: 0 0 0 18px; list-style: none; padding: 0; }
 .links a {
@@ -150,7 +157,8 @@ p { margin: 0; }
 .grad-text { background: var(--sunset); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .landing .lead { margin-top: 20px; max-width: 52ch; font-size: clamp(18px, 1.6vw, 21px); color: var(--text-2); }
 .landing .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-.hello { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; font-size: 15.5px; color: var(--text-2); }
+.hello { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 22px; font-size: 15.5px; color: var(--text-2); }
+.hello > * { white-space: nowrap; }
 .scroll-hint {
   position: absolute; left: 0; right: 0; bottom: 24px; width: fit-content; margin-inline: auto;
   display: flex; align-items: center; gap: 8px; color: #fff; font-size: 15.5px; text-decoration: none; white-space: nowrap;
