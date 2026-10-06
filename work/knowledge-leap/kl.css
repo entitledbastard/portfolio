@@ -1,0 +1,161 @@
+/* Knowledge Leap: scroll story. Builds on assets/site.css. */
+
+.kl {
+  --auto: #F5A03A;
+  --energy: #86D94E;
+  --chemical: #4FA9F2;
+  --food: #E9508A;
+  --connectivity: #A867F2;
+  --lens: #fff;
+}
+
+/* The sky: the original space-to-clouds image, which the page descends through as you scroll */
+.sky { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #120d2b; }
+.sky img {
+  position: absolute; left: 0; top: 0; width: 100%; height: 165vh; object-fit: cover; object-position: center top;
+  transform: translate3d(0, calc(var(--descent, 0) * -65vh), 0) scale(calc(1.06 - var(--descent, 0) * 0.06));
+  will-change: transform;
+}
+.sky::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10, 6, 30, 0.15), rgba(10, 6, 30, calc(0.25 + var(--descent, 0) * 0.55)));
+}
+.stars { position: absolute; inset: 0; }
+.stars i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff; opacity: 0; animation: twinkle var(--d, 4s) ease-in-out infinite var(--delay, 0s); }
+@keyframes twinkle { 50% { opacity: 0.9; } }
+
+.chapter { position: relative; z-index: 1; padding: clamp(80px, 12vh, 140px) 0; }
+.chapter.full { min-height: 100svh; display: flex; align-items: center; }
+.center { text-align: center; }
+.center .lead { margin-inline: auto; }
+.kicker { font-family: var(--round); font-size: 17px; color: var(--text-2); margin-bottom: 14px; }
+.big { font-size: clamp(36px, 5.6vw, 76px); line-height: 1.05; }
+.mid { font-size: clamp(28px, 3.6vw, 48px); line-height: 1.1; }
+
+/* 1. Hero */
+.kl-hero .logo-float { width: clamp(84px, 11vw, 128px); margin: 0 auto 26px; animation: bob 5s ease-in-out infinite; filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45)); }
+@keyframes bob { 50% { transform: translateY(-10px); } }
+.kl-hero h1 { font-size: clamp(48px, 8vw, 112px); line-height: 1; }
+.kl-hero .lead { margin-top: 22px; }
+.kl-hero .card-top { justify-content: center; margin-top: 26px; }
+
+/* 2. The pinned story: city on a TV, pull back into the room, push into the screen */
+.story { position: relative; z-index: 1; height: 560vh; }
+.story-stage { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding-top: 64px; }
+.story-card {
+  position: relative; overflow: hidden; border-radius: var(--r-card);
+  width: min(1100px, 92vw, calc((100svh - 300px) * 1.7778)); aspect-ratio: 16 / 9;
+  background: #000; box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.room { position: absolute; inset: 0; transform-origin: 50.45% 35.5%; will-change: transform; }
+.room > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* The TV screen on the wall of the living room photo */
+.tv { position: absolute; left: 37.7%; top: 20.4%; width: 25.5%; height: 30.2%; overflow: hidden; background: #05060a; }
+.tv .city { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tv .panel { position: absolute; top: 0; height: 100%; overflow: hidden; opacity: 0; }
+.tv .panel img { width: 100%; height: 100%; object-fit: cover; }
+.tv .panel + .panel { box-shadow: -1px 0 0 rgba(0, 0, 0, 0.6); }
+.tv .panel.scanning::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 30%; top: -30%;
+  background: linear-gradient(180deg, transparent, rgba(120, 220, 255, 0.2) 85%, rgba(170, 240, 255, 0.85) 100%);
+  animation: sweep 3.2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+@keyframes sweep { 0% { top: -30%; } 75%, 100% { top: 100%; } }
+/* AR corner brackets once you're "inside" the screen */
+.hud { position: absolute; inset: 14px; pointer-events: none; opacity: 0; transition: opacity 400ms ease; }
+.hud i { position: absolute; width: 28px; height: 28px; border: 2px solid rgba(255, 255, 255, 0.85); filter: drop-shadow(0 0 6px rgba(120, 220, 255, 0.8)); }
+.hud i:nth-child(1) { left: 0; top: 0; border-right: 0; border-bottom: 0; border-top-left-radius: 10px; }
+.hud i:nth-child(2) { right: 0; top: 0; border-left: 0; border-bottom: 0; border-top-right-radius: 10px; }
+.hud i:nth-child(3) { left: 0; bottom: 0; border-right: 0; border-top: 0; border-bottom-left-radius: 10px; }
+.hud i:nth-child(4) { right: 0; bottom: 0; border-left: 0; border-top: 0; border-bottom-right-radius: 10px; }
+.story-card.inside .hud { opacity: 1; }
+
+.captions { position: relative; width: min(760px, 92vw); height: 128px; text-align: center; }
+.cap { position: absolute; inset: 0; opacity: 0; transform: translateY(14px); transition: opacity 450ms ease, transform 600ms var(--ease); pointer-events: none; }
+.cap.on { opacity: 1; transform: none; }
+.cap h2 { font-size: clamp(24px, 3.2vw, 40px); line-height: 1.1; }
+.cap p { margin: 10px auto 0; max-width: 60ch; color: var(--text-2); font-size: clamp(15px, 1.3vw, 17px); }
+.dots { position: absolute; right: clamp(12px, 3vw, 36px); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.dots li { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.3); transition: background 300ms, transform 300ms, box-shadow 300ms; }
+.dots li.on { background: #fff; transform: scale(1.4); box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+
+/* Reduced motion: no pinning or camera moves, just the room with the three panels */
+.story.static { height: auto; }
+.story.static .story-stage { position: relative; height: auto; padding: 100px 0; }
+.story.static .captions { height: auto; }
+.story.static .cap { position: relative; opacity: 1; transform: none; margin-bottom: 24px; }
+
+/* 4. Lenses intro over the rain */
+.rainy { position: relative; overflow: hidden; }
+.rainy::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(14, 10, 32, 0.92), rgba(14, 10, 32, 0.58) 30%, rgba(14, 10, 32, 0.58) 70%, rgba(14, 10, 32, 0.95)), url('media/rain.jpg') center / cover;
+}
+.selector { display: grid; grid-template-columns: repeat(3, 96px); gap: 18px; justify-content: center; margin: 44px auto 0; }
+.selector .lens-chip { --c: #fff; display: grid; place-items: center; gap: 6px; width: 96px; height: 110px; border-radius: 22px; background: rgba(255, 255, 255, 0.16); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.22); color: #fff; text-decoration: none; font-size: 13.5px; transition: transform 400ms var(--ease), background 200ms, box-shadow 200ms; }
+.selector .lens-chip img { width: 50px; height: 50px; object-fit: contain; }
+.selector .lens-chip:hover { transform: translateY(-4px) scale(1.04); background: rgba(255, 255, 255, 0.26); box-shadow: 0 0 24px var(--c); color: #fff; text-shadow: none; }
+.js .selector .lens-chip { opacity: 0; transform: scale(0.7); }
+.js .selector.in .lens-chip { opacity: 1; transform: none; transition: opacity 500ms ease, transform 700ms var(--ease); transition-delay: calc(var(--n) * 90ms); }
+
+/* 5. Lenses */
+.lens-rail {
+  position: sticky; top: 88px; z-index: 5; display: flex; justify-content: center; gap: 6px; width: fit-content; margin: 0 auto;
+  padding: 6px; border-radius: 16px; background: rgba(20, 16, 44, 0.75); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.lens-rail a { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: 10px; color: var(--text-2); text-decoration: none; font-size: 14.5px; transition: background 200ms, color 200ms; }
+.lens-rail a img { width: 22px; height: 22px; object-fit: contain; }
+.lens-rail a:hover { color: #fff; text-shadow: none; background: rgba(255, 255, 255, 0.06); }
+.lens-rail a.is-active { color: #fff; background: rgba(255, 255, 255, 0.12); box-shadow: inset 0 -2px 0 var(--c); }
+
+.lens { --c: #fff; position: relative; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); align-items: center; padding: clamp(60px, 10vh, 110px) 0; scroll-margin-top: 150px; }
+.lens:nth-of-type(even) .viewport { order: 2; }
+.lens::before { content: ''; position: absolute; inset: 10% -10%; z-index: -1; background: radial-gradient(50% 50% at 30% 50%, color-mix(in srgb, var(--c) 22%, transparent), transparent 70%); pointer-events: none; }
+.lens:nth-of-type(even)::before { background: radial-gradient(50% 50% at 70% 50%, color-mix(in srgb, var(--c) 22%, transparent), transparent 70%); }
+
+/* AR "headset" viewport around each video */
+.viewport { position: relative; border-radius: 34px; padding: 10px; background: linear-gradient(140deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04)); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.viewport video, .viewport img { display: block; width: 100%; aspect-ratio: 1152 / 720; object-fit: cover; border-radius: 26px; background: #000; }
+.viewport::after { content: ''; position: absolute; inset: 10px; border-radius: 26px; pointer-events: none; box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.45); }
+.viewport .rec { position: absolute; top: 22px; left: 24px; z-index: 2; display: flex; align-items: center; gap: 8px; padding: 4px 10px; border-radius: 999px; background: rgba(0, 0, 0, 0.45); font-size: 12.5px; color: #fff; }
+.viewport .rec::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
+
+.lens-text .badge { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 18px; background: rgba(255, 255, 255, 0.12); box-shadow: 0 0 30px color-mix(in srgb, var(--c) 45%, transparent); margin-bottom: 18px; }
+.lens-text .badge img { width: 40px; height: 40px; object-fit: contain; }
+.lens-text .tag { font-family: var(--round); color: var(--c); font-size: 16px; }
+.lens-text h3 { font-size: clamp(28px, 3vw, 40px); margin: 6px 0 14px; }
+.lens-text p { color: var(--text-2); }
+.lens-text ul { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.lens-text li { padding: 6px 12px; border-radius: 999px; font-size: 14.5px; background: color-mix(in srgb, var(--c) 18%, transparent); color: #fff; }
+
+/* 6. Open by design: lenses orbiting a plus */
+.orbit { position: relative; width: min(360px, 80vw); aspect-ratio: 1; margin: 0 auto 40px; }
+.orbit .core { position: absolute; inset: 37%; border-radius: 26px; display: grid; place-items: center; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.25); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: var(--glow); }
+.orbit .core img { width: 44%; }
+.orbit .ring { position: absolute; inset: 0; animation: spin 40s linear infinite; }
+.orbit .ring img { position: absolute; width: 18%; left: 41%; top: 41%; transform: rotate(calc(var(--n) * 72deg)) translateY(-200%) rotate(calc(var(--n) * -72deg)); }
+.orbit .ring img { animation: counter 40s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes counter { from { rotate: 0deg; } to { rotate: -360deg; } }
+
+/* 7. Concept film: click-to-load */
+.film { position: relative; display: block; width: 100%; border: 0; padding: 0; border-radius: var(--r-card); overflow: hidden; cursor: pointer; background: #000; aspect-ratio: 16 / 9; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5); }
+.film img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: transform 700ms var(--ease), opacity 300ms; }
+.film:hover img { transform: scale(1.03); opacity: 1; }
+.film .play { position: absolute; left: 50%; top: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px; border-radius: 50%; display: grid; place-items: center; background: var(--sunset-btn); box-shadow: var(--glow); transition: transform 300ms var(--ease); }
+.film:hover .play { transform: scale(1.08); }
+.film .play svg { width: 30px; height: 30px; margin-left: 4px; }
+.film iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+@media (max-width: 900px) {
+  .captions { height: 150px; }
+  .dots { display: none; }
+  .lens { grid-template-columns: minmax(0, 1fr); }
+  .lens:nth-of-type(even) .viewport { order: 0; }
+  .lens-rail a span { display: none; }
+  .lens-rail a { padding: 0 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sky img { transform: none; }
+  .js .selector .lens-chip { opacity: 1; transform: none; }
+}

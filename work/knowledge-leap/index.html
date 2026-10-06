@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Leap | Ahmad Ibrahim</title>
+<meta name="description" content="Knowledge Leap, Ahmad Ibrahim's OCAD University thesis: an open-source augmented reality app for Magic Leap that turns everyday surroundings into something you can learn from.">
+<link rel="icon" href="../../favicon.svg?v=5" type="image/svg+xml">
+<meta name="theme-color" content="#120d2b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css?v=9">
+<link rel="stylesheet" href="kl.css?v=4">
+<script>
+  document.documentElement.classList.add('js');
+  setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
+</script>
+</head>
+<body class="kl">
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="sky" aria-hidden="true">
+  <img src="media/sky.jpg" alt="">
+  <div class="stars"></div>
+</div>
+
+<header class="topbar">
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-light.svg?v=4" alt="" width="28" height="36"><span class="logo-name">Ahmad Ibrahim</span></a>
+    <ul class="links">
+      <li><a href="../../#work">Work</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#earlier" aria-current="page">Earlier work</a></li>
+      <li><a href="../../#contact">Contact</a></li>
+    </ul>
+    <span class="spacer"></span>
+    <a class="btn sm hide-sm" href="#film">Watch the film</a>
+    <button class="btn sm primary" data-copy="ahmad.gh.ibrahim@gmail.com">Copy email</button>
+    <button class="btn sm menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
+    </button>
+    <div class="sheet" id="sheet">
+      <a href="../../#work">Work</a>
+      <a href="../../#about">About</a>
+      <a href="../../#earlier">Earlier work</a>
+      <a href="../../#contact">Contact</a>
+      <a href="#film">Watch the film</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- 1. Hero -->
+  <section class="chapter full kl-hero center" aria-labelledby="kl-title">
+    <div class="wrap">
+      <img class="logo-float rise" style="--i:0" src="media/logo.png" alt="Knowledge Leap logo: a hexagonal globe">
+      <h1 id="kl-title" class="rise" style="--i:1">Knowledge Leap</h1>
+      <p class="lead rise" style="--i:2">A new way to see the world. An open-source augmented reality app that turns everyday surroundings into something you can learn from.</p>
+      <div class="card-top rise" style="--i:3">
+        <span class="pill">OCAD University thesis</span>
+        <span class="pill">AR concept</span>
+        <span class="pill">Built for Magic Leap</span>
+      </div>
+    </div>
+    <a class="scroll-hint rise" style="--i:5" href="#imagine">Scroll down to leap in
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 3v12M4 10l5 5 5-5"/></svg>
+    </a>
+  </section>
+
+  <!-- 2. Pinned story: a city on a TV, pull back into the room, push into the screen -->
+  <section class="story" id="imagine" aria-label="The idea and the technology behind it">
+    <div class="story-stage">
+      <div class="story-card">
+        <div class="room">
+          <img src="media/living-room.jpg" alt="">
+          <div class="tv">
+            <img class="city" src="media/connected-city.jpg" alt="A city at night with light trails arcing between buildings">
+            <div class="panel"><img src="media/magic-leap-headset.jpg" alt="A person smiling while wearing a Magic Leap headset"></div>
+            <div class="panel"><img src="media/magicverse.jpg" alt="Magic Leap's Magicverse diagram: digital layers for entertainment, communications, health, energy and mobility stacked over a city"></div>
+            <div class="panel"><img src="media/spatial-understanding.jpg" alt="A street scene with boxes labelling each person and object the camera has recognised"></div>
+          </div>
+        </div>
+        <div class="hud" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="captions" aria-live="polite">
+        <div class="cap"><h2>Imagine a world that <span class="grad-text">explains itself</span>.</h2><p>Everything around you has a story: what it's made of, how much energy it uses, what it's connected to.</p></div>
+        <div class="cap"><h2>Powered by three technologies</h2><p>Knowledge Leap brings those stories into the room you're standing in, using three things Magic Leap makes possible.</p></div>
+        <div class="cap"><h2>Magic Leap</h2><p>A headset that places digital content in the real room around you, so information sits right next to the thing it describes.</p></div>
+        <div class="cap"><h2>Magicverse</h2><p>Magic Leap's vision of persistent digital layers over the physical world, from energy and mobility to health. Knowledge Leap adds a layer for learning.</p></div>
+        <div class="cap"><h2>Spatial understanding</h2><p>The headset maps the space and recognises what's in it, so every insight attaches to the right object.</p></div>
+      </div>
+
+      <ol class="dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
+    </div>
+  </section>
+
+  <!-- 4. Lenses intro -->
+  <section class="chapter full rainy center" id="lenses" aria-labelledby="lenses-title">
+    <div class="wrap">
+      <p class="kicker reveal">How it works</p>
+      <h2 id="lenses-title" class="big reveal">Five lenses. <span class="grad-text">One room, seen five ways.</span></h2>
+      <p class="lead reveal" style="margin-top: 22px">A lens is a way of looking. Pick one from the selector and the room changes to show something new. Knowledge Leap launches with five.</p>
+      <nav class="selector reveal" aria-label="Lenses">
+        <a class="lens-chip" href="#auto" style="--n:0; --c: var(--auto)"><img src="media/icon-auto.png" alt="">Auto</a>
+        <a class="lens-chip" href="#energy" style="--n:1; --c: var(--energy)"><img src="media/icon-energy.png" alt="">Energy</a>
+        <a class="lens-chip" href="#chemical" style="--n:2; --c: var(--chemical)"><img src="media/icon-chemical.png" alt="">Chemicals</a>
+        <a class="lens-chip" href="#food" style="--n:3; --c: var(--food)"><img src="media/icon-food.png" alt="">Food</a>
+        <a class="lens-chip" href="#connectivity" style="--n:4; --c: var(--connectivity)"><img src="media/icon-connectivity.png" alt="">Connectivity</a>
+        <a class="lens-chip" href="#open" style="--n:5; --c: #fff"><img src="media/icon-new.svg" alt="">New lens</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 5. The lenses -->
+  <section class="chapter" aria-label="The five lenses" style="padding-top: 20px">
+    <nav class="lens-rail" data-spy aria-label="Jump to lens">
+      <a href="#energy" style="--c: var(--energy)"><img src="media/icon-energy.png" alt=""><span>Energy</span></a>
+      <a href="#chemical" style="--c: var(--chemical)"><img src="media/icon-chemical.png" alt=""><span>Chemicals</span></a>
+      <a href="#food" style="--c: var(--food)"><img src="media/icon-food.png" alt=""><span>Food</span></a>
+      <a href="#connectivity" style="--c: var(--connectivity)"><img src="media/icon-connectivity.png" alt=""><span>Connectivity</span></a>
+      <a href="#auto" style="--c: var(--auto)"><img src="media/icon-auto.png" alt=""><span>Auto</span></a>
+    </nav>
+
+    <div class="wrap">
+      <article class="lens" id="energy" style="--c: var(--energy)">
+        <div class="viewport reveal">
+          <span class="rec">Energy lens</span>
+          <video muted loop playsinline preload="none" poster="media/energy.jpg" aria-label="AR mockup: the lens selector floating in a kitchen, then the Energy lens"><source src="media/energy.mp4" type="video/mp4"></video>
+        </div>
+        <div class="lens-text reveal">
+          <div class="badge"><img src="media/icon-energy.png" alt=""></div>
+          <span class="tag">Energy detection</span>
+          <h3>See what everything costs to run</h3>
+          <p>The lens scans the room, recognises each appliance down to its brand and model, and pulls efficiency data from the manufacturer and rating sites. Every object gets an indicator from green to red. Tap one to see how to make it more efficient.</p>
+          <ul><li>Water use</li><li>Energy use</li><li>Manufacturing footprint</li></ul>
+        </div>
+      </article>
+
+      <article class="lens" id="chemical" style="--c: var(--chemical)">
+        <div class="viewport reveal">
+          <span class="rec">Chemical reactions lens</span>
+          <video muted loop playsinline preload="none" poster="media/chemical.jpg" aria-label="AR mockup of the Chemical Reactions lens in a living room"><source src="media/chemical.mp4" type="video/mp4"></video>
+        </div>
+        <div class="lens-text reveal">
+          <div class="badge"><img src="media/icon-chemical.png" alt=""></div>
+          <span class="tag">Chemical reactions</span>
+          <h3>Watch materials change</h3>
+          <p>The lens works out what each object is made of, then lets you run the reactions that material goes through. See how different metals oxidise, or how crystals grow, on the actual object in front of you.</p>
+          <ul><li>Crystal growth</li><li>Oxidation</li><li>Decomposition</li><li>Metabolism</li></ul>
+        </div>
+      </article>
+
+      <article class="lens" id="food" style="--c: var(--food)">
+        <div class="viewport reveal">
+          <span class="rec">Food lens</span>
+          <video muted loop playsinline preload="none" poster="media/food.jpg" aria-label="AR mockup of the Food lens"><source src="media/food.mp4" type="video/mp4"></video>
+        </div>
+        <div class="lens-text reveal">
+          <div class="badge"><img src="media/icon-food.png" alt=""></div>
+          <span class="tag">Food detection</span>
+          <h3>Know what's on your plate</h3>
+          <p>The lens recognises food down to the ingredient, compares it with recipes online to estimate calories and nutrients, and builds a daily report. Tracking what you eat becomes something that happens while you eat.</p>
+          <ul><li>Daily calories</li><li>Daily macros</li><li>Foods and ingredients</li></ul>
+        </div>
+      </article>
+
+      <article class="lens" id="connectivity" style="--c: var(--connectivity)">
+        <div class="viewport reveal">
+          <span class="rec">Connectivity lens</span>
+          <video muted loop playsinline preload="none" poster="media/connectivity.jpg" aria-label="AR mockup of the Connectivity lens in a living room"><source src="media/connectivity.mp4" type="video/mp4"></video>
+        </div>
+        <div class="lens-text reveal">
+          <div class="badge"><img src="media/icon-connectivity.png" alt=""></div>
+          <span class="tag">Connectivity detection</span>
+          <h3>See the invisible network</h3>
+          <p>The lens makes the signals around you visible. Select a device to trace its connections, or reveal everything at once. Linked to a smart home, it lets you switch devices on and off and watch their connections form and drop.</p>
+          <ul><li>GPS</li><li>Wi-Fi</li><li>Bluetooth</li></ul>
+        </div>
+      </article>
+
+      <article class="lens" id="auto" style="--c: var(--auto)">
+        <div class="viewport reveal">
+          <span class="rec">Auto mode</span>
+          <video muted loop playsinline preload="none" poster="media/auto.jpg" aria-label="AR mockup of Auto mode combining several lenses"><source src="media/auto.mp4" type="video/mp4"></video>
+        </div>
+        <div class="lens-text reveal">
+          <div class="badge"><img src="media/icon-auto.png" alt=""></div>
+          <span class="tag">Auto mode</span>
+          <h3>Let curiosity lead</h3>
+          <p>Auto mode runs several lenses at once and lets you choose what to show. It learns what you're interested in and points you to things worth a closer look, so learning becomes part of an ordinary day.</p>
+          <ul><li>Learns your interests</li><li>Suggests new things to explore</li><li>Everyday learning</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. Open by design -->
+  <section class="chapter full center" id="open" aria-labelledby="open-title">
+    <div class="wrap">
+      <div class="orbit reveal" aria-hidden="true">
+        <div class="ring">
+          <img src="media/icon-energy.png" alt="" style="--n:0">
+          <img src="media/icon-chemical.png" alt="" style="--n:1">
+          <img src="media/icon-food.png" alt="" style="--n:2">
+          <img src="media/icon-connectivity.png" alt="" style="--n:3">
+          <img src="media/icon-auto.png" alt="" style="--n:4">
+        </div>
+        <div class="core"><img src="media/icon-new.svg" alt=""></div>
+      </div>
+      <p class="kicker reveal">The bigger idea</p>
+      <h2 id="open-title" class="big reveal">Open by design</h2>
+      <p class="lead reveal" style="margin-top: 22px">The five lenses are a starting point. Because Knowledge Leap is open source, designers, developers and teachers can build new lenses from perspectives nobody has tried yet, and anyone can download them from the Magic Leap World app store.</p>
+    </div>
+  </section>
+
+  <!-- 7. Film + about -->
+  <div class="wrap desk">
+
+    <section class="win reveal" id="film" data-win aria-labelledby="film-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="film-body" aria-expanded="true"><i></i><i></i></button>
+        <h2 id="film-title">The concept film</h2>
+        <span class="spacer"></span>
+        <span class="meta-r"><span class="pill">1:31</span></span>
+      </div>
+      <div class="win-body" id="film-body"><div class="inner"><div class="pad">
+        <button class="film" data-yt="GE6dyWhyHm8" aria-label="Play the Knowledge Leap concept film on YouTube">
+          <img src="media/film.jpg" alt="" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+        </button>
+      </div></div></div>
+    </section>
+
+    <section class="win reveal" id="about-project" data-win aria-labelledby="about-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="about-body" aria-expanded="true"><i></i><i></i></button>
+        <h2 id="about-title">About the project</h2>
+      </div>
+      <div class="win-body" id="about-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 22px">
+        <ul class="facts">
+          <li><b>Context</b>University thesis, OCAD University</li>
+          <li><b>Platform</b>Designed to run on Magic Leap</li>
+          <li><b>My work</b>Concept, UX/UI and the lens system</li>
+          <li><b>Motion</b>AR mockup videos made in After Effects</li>
+        </ul>
+        <p class="muted" style="font-size: 15px">Credits: Magic Leap, Magicverse and the Magic Leap headset image are © Magic Leap, Inc. Knowledge Leap was a student concept designed for their platform and is not affiliated with Magic Leap. Room, city and street photography is third-party imagery used for illustration.</p>
+      </div></div></div>
+    </section>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a class="btn" href="../../#earlier">← All work</a>
+      <a class="btn primary" href="../pulsenics/">Next: Pulsenics <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+    </nav>
+
+    <footer class="foot">
+      <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
+      <span>Designed and built by hand</span>
+    </footer>
+  </div>
+</main>
+
+<script src="../../assets/site.js?v=6"></script>
+<script src="kl.js?v=5"></script>
+</body>
+</html>
