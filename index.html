@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmad Ibrahim | UX/UI designer and front-end builder</title>
+<meta name="description" content="Ahmad Ibrahim designs data-heavy product interfaces for B2B and technical teams, and builds them in code.">
+<link rel="icon" href="favicon.svg?v=5" type="image/svg+xml">
+<meta name="theme-color" content="#11161B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=9">
+<script>
+  // Enable entrance animations only when JS runs; fall back to plain content if scripts fail
+  document.documentElement.classList.add('js');
+  setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="backdrop" aria-hidden="true"></div>
+<div class="preloader" aria-hidden="true"><img src="assets/brand/logo-light.svg?v=4" alt=""></div>
+
+<header class="topbar">
+  <nav class="wrap" aria-label="Main">
+    <a class="logo" href="./" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="assets/brand/logo-light.svg?v=4" alt="" width="28" height="36"><span class="logo-name">Ahmad Ibrahim</span></a>
+    <ul class="links" data-spy>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#earlier">Earlier work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="spacer"></span>
+    <a class="btn sm hide-sm" href="resume.pdf" target="_blank" rel="noopener" data-resume>Resume</a>
+    <button class="btn sm primary" data-copy="ahmad.gh.ibrahim@gmail.com">Copy email</button>
+    <button class="btn sm menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Menu">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
+    </button>
+    <div class="sheet" id="sheet">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#earlier">Earlier work</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" data-resume>Resume</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Landing -->
+  <section class="landing" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="hello rise" style="--i:0"><span class="hello-name">Ahmad Ibrahim</span><span class="pill live"><span class="dot"></span>Open to new roles</span> Cape Town, South Africa · remote</p>
+      <h1 id="hero-title">
+        <span class="line rise" style="--i:1">I design</span>
+        <span class="line rise" style="--i:2"><span class="grad-text">data-heavy</span></span>
+        <span class="line rise" style="--i:3">product interfaces,</span>
+        <span class="line rise" style="--i:4">and build them.</span>
+      </h1>
+      <p class="lead rise" style="--i:5">I work on tools for technical teams: dashboards, internal tools and content platforms. I take them from research and Figma through to working front ends.</p>
+      <div class="actions rise" style="--i:6">
+        <a class="btn primary" href="#work">View work <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener" data-resume>Download resume</a>
+      </div>
+    </div>
+    <a class="scroll-hint rise" style="--i:7" href="#work">Scroll down to see projects
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 3v12M4 10l5 5 5-5"/></svg>
+    </a>
+  </section>
+
+  <div class="wrap desk">
+
+    <!-- Work -->
+    <section class="win reveal" id="work" data-win aria-labelledby="work-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="work-body" aria-expanded="true"><i></i><i></i></button>
+        <h2 id="work-title">Selected work</h2>
+      </div>
+      <div class="win-body" id="work-body"><div class="inner"><div class="pad">
+        <div class="tabs" role="tablist" aria-label="Filter work">
+          <button class="tab" role="tab" aria-selected="true" data-filter="all">All <span class="n"></span></button>
+          <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-filter="product">Product <span class="n"></span></button>
+          <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-filter="web">Web <span class="n"></span></button>
+        </div>
+
+        <div class="projects">
+          <!-- 1. Pulsenics System Software -->
+          <a class="card" href="work/pulsenics/" data-tags="product">
+            <div class="card-media" style="background: #1A1B33">
+              <img src="work/pulsenics/images/hardware-probe-focus.png" alt="" loading="lazy" style="object-fit: cover; object-position: left top">
+            </div>
+            <span class="open" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 13 13 5M7 5h6v6"/></svg></span>
+            <div class="card-body">
+              <div class="card-top"><span class="pill live"><span class="dot"></span>In use</span><span class="pill">Case study</span></div>
+              <h3>Pulsenics System Software</h3>
+              <p>The web app Pulsenics and its clients use to manage EIS hardware, run experiments, control probes and analyse the data. Designed with Marc Varone, including the UI system.</p>
+              <div class="tags"><span class="pill">Product</span><span class="pill">Data viz</span><span class="pill">Design system</span></div>
+            </div>
+          </a>
+
+          <!-- 2. Gabion -->
+          <a class="card sunset" href="work/gabion/" data-tags="web">
+            <div class="card-media">
+              <img src="work/gabion/images/home-hero.jpg" alt="" loading="lazy">
+            </div>
+            <span class="open" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 13 13 5M7 5h6v6"/></svg></span>
+            <div class="card-body">
+              <div class="card-top"><span class="pill live"><span class="dot"></span>Live</span><span class="pill">Case study</span></div>
+              <h3>Gabion Developments</h3>
+              <p>Sole designer and builder of a marketing site for a Toronto design-build firm, designed from scratch and built in Webflow in two months.</p>
+              <div class="tags"><span class="pill">Web</span><span class="pill">IA</span><span class="pill">Webflow</span></div>
+            </div>
+          </a>
+
+          <!-- 3. Pulsenics website -->
+          <a class="card" href="work/pulsenics-web/" data-tags="web">
+            <div class="card-media">
+              <img src="work/pulsenics-web/images/home-hero.jpg" alt="" loading="lazy">
+            </div>
+            <span class="open" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 13 13 5M7 5h6v6"/></svg></span>
+            <div class="card-body">
+              <div class="card-top"><span class="pill live"><span class="dot"></span>Live</span><span class="pill">Case study</span></div>
+              <h3>Pulsenics Website</h3>
+              <p>I took over pulsenics.com and reshaped it: a redesigned homepage and product pages, plus a new Knowledge Centre and News that hosts the team's interactive EIS modules.</p>
+              <div class="tags"><span class="pill">Web</span><span class="pill">Webflow CMS</span><span class="pill">Content design</span></div>
+            </div>
+          </a>
+
+        </div>
+      </div></div></div>
+    </section>
+
+    <!-- About -->
+    <section class="win reveal" id="about" data-win aria-labelledby="about-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="about-body" aria-expanded="true"><i></i><i></i></button>
+        <h2 id="about-title">About me</h2>
+      </div>
+      <div class="win-body" id="about-body"><div class="inner"><div class="pad">
+        <p class="lead" style="margin-bottom: 22px">I'm a UX/UI designer who builds what I design. I'm at my best on technical, data-dense products, where the interface has to make complex information easy to act on.</p>
+        <ul class="facts">
+          <li><b>Focus</b>Data-dense B2B and developer-facing products</li>
+          <li><b>Design</b>Figma, Figma Make, design systems</li>
+          <li><b>Build</b>React, HTML/CSS, Webflow, Claude Code, Codex</li>
+          <li><b>Data</b>SQL and reporting</li>
+        </ul>
+      </div></div></div>
+    </section>
+
+    <!-- Earlier work -->
+    <section class="win reveal" id="earlier" data-win aria-labelledby="earlier-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="earlier-body" aria-expanded="true"><i></i><i></i></button>
+        <h2 id="earlier-title">Earlier work</h2>
+      </div>
+      <div class="win-body" id="earlier-body"><div class="inner"><div class="pad">
+        <ul class="rows">
+          <li><strong><a href="work/knowledge-leap/" style="color: #fff">Knowledge Leap</a></strong><span>My OCAD University thesis: an open-source AR app for Magic Leap that turns your surroundings into lessons.</span><a class="btn sm" href="work/knowledge-leap/" aria-label="View Knowledge Leap">View →</a></li>
+          <li><strong><a href="work/duovillage/" style="color: #fff">DuoVillage</a></strong><span>A research-led group project: a Duolingo concept for practising real conversations without the social anxiety.</span><a class="btn sm" href="work/duovillage/" aria-label="View DuoVillage">View →</a></li>
+        </ul>
+      </div></div></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="win cta-win reveal" id="contact" data-win aria-labelledby="contact-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="contact-body" aria-expanded="true"><i></i><i></i></button>
+        <span class="title">Contact</span>
+      </div>
+      <div class="win-body" id="contact-body"><div class="inner"><div class="pad contact">
+        <div>
+          <h2 id="contact-title" class="h-lg">Hiring for a product or UX role?</h2>
+          <p class="lead" style="margin-top: 10px">I'm open to roles on data-heavy, B2B and developer-facing products.</p>
+        </div>
+        <div class="actions">
+          <button class="btn primary" data-copy="ahmad.gh.ibrahim@gmail.com">Copy email</button>
+          <a class="btn" href="mailto:ahmad.gh.ibrahim@gmail.com">Send an email</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener" data-resume>Resume</a>
+        </div>
+      </div></div></div>
+    </section>
+
+    <footer class="foot">
+      <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
+      <span>Designed and built by hand</span>
+    </footer>
+  </div>
+</main>
+
+<script src="assets/site.js?v=6"></script>
+<script src="assets/bg.js?v=6"></script>
+</body>
+</html>
