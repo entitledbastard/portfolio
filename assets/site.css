@@ -36,7 +36,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-padding-top: 96px; }
+html { scroll-padding-top: 96px; overflow-x: clip; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body {
   margin: 0;
   background: var(--night);
@@ -170,6 +171,11 @@ p { margin: 0; }
 .win-bar h2, .win-bar .title { font-family: var(--round); font-size: clamp(19px, 1.8vw, 22px); }
 .win-bar .spacer { flex: 1; }
 .win-bar .meta-r { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width: 600px) {
+  .win-bar { flex-wrap: wrap; }
+  .win-bar .spacer { display: none; }
+  .win-bar .meta-r { flex-basis: 100%; justify-content: flex-start; padding-left: 44px; }
+}
 
 /* Ahmad's round X button (circleforxblock) */
 .xbtn {
