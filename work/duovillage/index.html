@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DuoVillage | Ahmad Ibrahim</title>
 <meta name="description" content="DuoVillage, a university group project: a concept redesign of Duolingo that lets learners practise real conversations without the social anxiety, based on survey and interview research.">
-<link rel="icon" href="../../favicon.svg?v=5" type="image/svg+xml">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="icon" href="../../favicon.svg?v=6" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png?v=2">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ahmad Ibrahim">
 <meta property="og:title" content="DuoVillage | Ahmad Ibrahim">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=12">
+<link rel="stylesheet" href="../../assets/site.css?v=37">
 <link rel="stylesheet" href="dv.css?v=3">
 <script>
   document.documentElement.classList.add('js');
@@ -34,28 +34,29 @@
 <div class="backdrop" data-layout="compact" aria-hidden="true"></div>
 
 <header class="topbar">
-  <nav class="wrap" aria-label="Main">
-    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-light.svg?v=4" alt="" width="28" height="36"><span class="logo-name">Ahmad Ibrahim</span></a>
+  <nav class="dock" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-glass.svg?v=2" alt="" width="34" height="37"></a>
+    <span class="dock-sep" aria-hidden="true"></span>
     <ul class="links">
-      <li><a href="../../#work">Work</a></li>
-      <li><a href="../../#about">About</a></li>
-      <li><a href="../../#earlier" aria-current="page">Earlier work</a></li>
-      <li><a href="../../#contact">Contact</a></li>
+        <li><a href="../../#work" aria-label="Work" data-tip="Work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></a></li>
+        <li><a href="../../#about" aria-label="About" data-tip="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></a></li>
+        <li><a href="../../#earlier" aria-label="Earlier work" data-tip="Earlier work" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg></a></li>
+        <li><a href="../../#contact" aria-label="Contact" data-tip="Contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg></a></li>
     </ul>
-    <span class="spacer"></span>
-    <a class="btn sm hide-sm" href="#mobile">See the app</a>
-    <button class="btn sm primary" data-copy="ahmad.gh.ibrahim@gmail.com">Copy email</button>
-    <button class="btn sm menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Menu">
-      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
-    </button>
-    <div class="sheet" id="sheet">
-      <a href="../../#work">Work</a>
-      <a href="../../#about">About</a>
-      <a href="../../#earlier">Earlier work</a>
-      <a href="../../#contact">Contact</a>
-      <a href="#mobile">See the app</a>
-    </div>
+    <span class="dock-sep dock-wide" aria-hidden="true"></span>
+    <a class="dock-btn dock-wide" href="#mobile" aria-label="See the app" data-tip="See the app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg></a>
+    <a class="dock-btn mail" href="mailto:ahmad.gh.ibrahim@gmail.com" data-copy="ahmad.gh.ibrahim@gmail.com" aria-label="Copy email" data-tip="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="3"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></svg></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i></i><i></i><i></i></button>
   </nav>
+  <div class="sheet-host">
+    <div class="sheet" id="sheet">
+      <a href="../../#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Work</span></a>
+      <a href="../../#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg><span>About</span></a>
+      <a href="../../#earlier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg><span>Earlier work</span></a>
+      <a href="../../#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg><span>Contact</span></a>
+      <a href="#mobile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg><span>See the app</span></a>
+    </div>
+  </div>
 </header>
 
 <main id="main">
@@ -71,7 +72,7 @@
         <span class="pill">Concept</span>
       </div>
       <h1 id="cs-title" class="rise" style="--i:2">Duo<span class="grad-text" style="background: linear-gradient(135deg, #C8F2A8, #7AD13A); -webkit-background-clip: text; background-clip: text">Village</span></h1>
-      <p class="lead rise" style="--i:3">A concept redesign of Duolingo that gives learners real-world conversation practice, without the social anxiety that keeps them away from it.</p>
+      <p class="lead rise" style="--i:3">A concept redesign of Duolingo that gives learners conversation practice for real situations, without the social anxiety that keeps them away from it.</p>
       <div class="dv-hero-shot rise" style="--i:4"><img src="media/hero.jpg" alt="DuoVillage on a laptop and two phones: an illustrated village street with a house and a restaurant"></div>
     </div>
   </section>
@@ -86,7 +87,7 @@
       </div>
       <div class="win-body" id="feat-body"><div class="inner"><div class="pad">
         <div class="features">
-          <article class="feature"><img src="media/feat-explore.jpg" alt="A hand holding a phone showing the DuoVillage map" loading="lazy"><div><h3>Explore your village</h3><p>Learn through real-world scenarios like shopping and meeting new people, in a village shaped around how you learn.</p></div></article>
+          <article class="feature"><img src="media/feat-explore.jpg" alt="A hand holding a phone showing the DuoVillage map" loading="lazy"><div><h3>Explore your village</h3><p>Learn through everyday scenarios like shopping and meeting new people, in a village shaped around how you learn.</p></div></article>
           <article class="feature"><img src="media/feat-plans.jpg" alt="Someone on a couch setting a goal in the DuoVillage app" loading="lazy"><div><h3>Set your plans</h3><p>Set goals, or plan for a trip: where you're going, what you'll do there, and the level you want to reach before you leave.</p></div></article>
           <article class="feature"><img src="media/feat-world.jpg" alt="A phone in someone's hand showing a DuoVillage conversation" loading="lazy" style="object-position: center 30%"><div><h3>A world of languages</h3><p>Every language gets its own village, rooted in its place and culture, with characters who remember you and always have something to say.</p></div></article>
           <article class="feature"><img src="media/feat-every-screen.jpg" alt="DuoVillage open on a desktop computer" loading="lazy" style="object-position: center 40%"><div><h3>On every screen</h3><p>Pick up where you left off on any device. The village goes where you go.</p></div></article>
@@ -101,9 +102,9 @@
         <h2 id="ctx-title">Where it started</h2>
       </div>
       <div class="win-body" id="ctx-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 22px">
-        <p class="h-lg">COVID-19 cancelled Duolingo's in-person events, <span style="color: #C8F2A8">the one place learners could practise speaking with real people</span>.</p>
-        <p class="lead">Duolingo's mission is to make education free, fun and accessible to everyone. Many learners valued its in-person events because they gave them real-world practice that the app couldn't. When the pandemic shut those events down, my group and I set out to find what could replace them.</p>
-        <figure class="shot"><img src="media/events-cancelled.png" alt="Duolingo notice: in-person events are temporarily suspended because of COVID-19" loading="lazy" style="background: #fff; border-radius: 10px"><figcaption>Duolingo's notice suspending in-person events</figcaption></figure>
+        <p class="h-lg">COVID-19 cancelled Duolingo's live events, <span style="color: #C8F2A8">the one place learners could practise speaking with real people</span>.</p>
+        <p class="lead">Duolingo's mission is to make education free, fun and accessible to everyone. Many learners valued its live events because they gave them practice with real conversations that the app couldn't. When the pandemic shut those events down, my group and I set out to find what could replace them.</p>
+        <figure class="shot"><img src="media/events-cancelled.png" alt="Duolingo notice: in-person events are temporarily suspended because of COVID-19" loading="lazy" style="background: #fff; border-radius: 10px"><figcaption>Duolingo's notice suspending live events</figcaption></figure>
       </div></div></div>
     </section>
 
@@ -119,8 +120,8 @@
             <span class="tag">Our first idea</span>
             <h3>Move the events online</h3>
             <ul>
-              <li><span>Video-call versions of the in-person events</span></li>
-              <li><span>A two-way pairing program where learners teach each other</span></li>
+              <li><span>Versions of the live events held over video call</span></li>
+              <li><span>A pairing program where learners teach each other</span></li>
             </ul>
           </div>
           <div class="arrow-mid" aria-hidden="true">→</div>
@@ -173,7 +174,7 @@
           <div class="problem">
             <img src="media/problem1-photo.jpg" alt="" loading="lazy">
             <div>
-              <h3>1. Solo learners want real-world practice</h3>
+              <h3>1. Solo learners want practice for real situations</h3>
               <p>Duolingo is built for solo learners but focuses on listening and writing. Exercises like "type what you hear" never ask you to say "I'd like to order a coffee" or "Where's the train station?", and there's no conversation partner to practise with.</p>
             </div>
           </div>
@@ -181,7 +182,7 @@
             <img src="media/problem2-photo.jpg" alt="" loading="lazy">
             <div>
               <h3>2. Motivation fades</h3>
-              <p>Goals are measured only in XP, which isn't personal: everyone learns for a different reason. And the avatar shop offered just three outfits, leaving Duolingo's game-like side underused.</p>
+              <p>Goals are measured only in XP, which isn't personal: everyone learns for a different reason. And the avatar shop offered just three outfits, leaving the game side of Duolingo underused.</p>
             </div>
           </div>
         </div>
@@ -218,7 +219,7 @@
           <figure class="shot"><img src="media/needs-diagram.jpg" alt="Venn diagram: business needs (retention, return on investment, revenue, KPIs) and user needs (solo learning, rewards, practice, motivation, personalised goals) with a question mark where they overlap" loading="lazy" style="background: #fff"><figcaption>Finding the overlap between business and user needs</figcaption></figure>
         </div>
         <div class="wants">
-          <div class="tile"><h3 style="margin-top: 0">The user wants</h3><p>Real-world practice that doesn't add social anxiety, and personal options that keep them motivated.</p></div>
+          <div class="tile"><h3 style="margin-top: 0">The user wants</h3><p>Practice for real situations that doesn't add social anxiety, and personal options that keep them motivated.</p></div>
           <div class="tile"><h3 style="margin-top: 0">The business needs</h3><p>Higher engagement and retention, and more revenue from stronger rewards and goal features.</p></div>
         </div>
       </div></div></div>
@@ -268,7 +269,7 @@
           <span class="chapter-label"><span>Lessons</span></span>
           <p class="count">01 / 14</p>
           <div class="flow-caps" aria-live="polite">
-            <div data-chapter="Lessons"><h3>Lessons now live in a village</h3><p>The old level bubbles are attached to places, like a café or a restaurant, so every lesson has a real-world context.</p></div>
+            <div data-chapter="Lessons"><h3>Lessons now live in a village</h3><p>The old level bubbles are attached to places, like a café or a restaurant, so every lesson happens somewhere real.</p></div>
             <div data-chapter="Lessons"><h3>Lessons stay, missions are new</h3><p>Tips and practice work as before. Begin Mission takes what you just learned into a real scenario, different every time.</p></div>
             <div data-chapter="Mission"><h3>Every mission has a task</h3><p>"Our first task is to buy a cup of coffee. Let's go!"</p></div>
             <div data-chapter="Mission"><h3>Walk into the shop</h3><p>The village path leads to the restaurant, where a character is waiting.</p></div>
@@ -328,7 +329,7 @@
         <ul class="facts">
           <li><b>Context</b>University group project, taught online during COVID-19</li>
           <li><b>Team</b>Hanna Hasegawa, Rehan Rameez, Christina Lukasko and me</li>
-          <li><b>Methods</b>Forum research, a 63-person survey, interviews, persona, competitive analysis, sketching</li>
+          <li><b>Methods</b>Forum research, a survey of 63 people, interviews, persona, competitive analysis, sketching</li>
           <li><b>Output</b>Web and mobile redesign concepts</li>
         </ul>
         <p class="muted" style="font-size: 15px">DuoVillage is a student concept and is not affiliated with Duolingo. Duolingo, Duo and related marks belong to Duolingo, Inc. Lifestyle mockups use stock templates.</p>
@@ -342,12 +343,13 @@
 
     <footer class="foot">
       <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
+      <span>Designed by me, built in Claude Code</span>
     </footer>
   </div>
 </main>
 
-<script src="../../assets/site.js?v=6"></script>
-<script src="../../assets/bg.js?v=6"></script>
+<script src="../../assets/site.js?v=12"></script>
+<script src="../../assets/logo3d.js?v=5"></script>
 <script src="dv.js?v=1"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pulsenics System Software case study | Ahmad Ibrahim</title>
 <meta name="description" content="Designing the web app Pulsenics and its clients use to manage EIS hardware, run experiments, control probes and analyse electrochemical data.">
-<link rel="icon" href="../../favicon.svg?v=5" type="image/svg+xml">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="icon" href="../../favicon.svg?v=6" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png?v=2">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ahmad Ibrahim">
 <meta property="og:title" content="Pulsenics System Software case study | Ahmad Ibrahim">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=12">
+<link rel="stylesheet" href="../../assets/site.css?v=37">
 <script>
   document.documentElement.classList.add('js');
   setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
@@ -33,28 +33,29 @@
 <div class="backdrop" data-layout="compact" aria-hidden="true"></div>
 
 <header class="topbar">
-  <nav class="wrap" aria-label="Main">
-    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-light.svg?v=4" alt="" width="28" height="36"><span class="logo-name">Ahmad Ibrahim</span></a>
+  <nav class="dock" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-glass.svg?v=2" alt="" width="34" height="37"></a>
+    <span class="dock-sep" aria-hidden="true"></span>
     <ul class="links">
-      <li><a href="../../#work" aria-current="page">Work</a></li>
-      <li><a href="../../#about">About</a></li>
-      <li><a href="../../#earlier">Earlier work</a></li>
-      <li><a href="../../#contact">Contact</a></li>
+        <li><a href="../../#work" aria-label="Work" data-tip="Work" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></a></li>
+        <li><a href="../../#about" aria-label="About" data-tip="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></a></li>
+        <li><a href="../../#earlier" aria-label="Earlier work" data-tip="Earlier work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg></a></li>
+        <li><a href="../../#contact" aria-label="Contact" data-tip="Contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg></a></li>
     </ul>
-    <span class="spacer"></span>
-    <a class="btn sm hide-sm" href="../pulsenics-web/">Next: Pulsenics Website →</a>
-    <button class="btn sm primary" data-copy="ahmad.gh.ibrahim@gmail.com">Copy email</button>
-    <button class="btn sm menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Menu">
-      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
-    </button>
-    <div class="sheet" id="sheet">
-      <a href="../../#work">Work</a>
-      <a href="../../#about">About</a>
-      <a href="../../#earlier">Earlier work</a>
-      <a href="../../#contact">Contact</a>
-      <a href="../pulsenics-web/">Next: Pulsenics Website</a>
-    </div>
+    <span class="dock-sep dock-wide" aria-hidden="true"></span>
+    <a class="dock-btn dock-wide" href="../pulsenics-web/" aria-label="Next: Pulsenics Website" data-tip="Next: Pulsenics Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="dock-btn mail" href="mailto:ahmad.gh.ibrahim@gmail.com" data-copy="ahmad.gh.ibrahim@gmail.com" aria-label="Copy email" data-tip="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="3"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></svg></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i></i><i></i><i></i></button>
   </nav>
+  <div class="sheet-host">
+    <div class="sheet" id="sheet">
+      <a href="../../#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Work</span></a>
+      <a href="../../#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg><span>About</span></a>
+      <a href="../../#earlier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg><span>Earlier work</span></a>
+      <a href="../../#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg><span>Contact</span></a>
+      <a href="../pulsenics-web/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Next: Pulsenics Website</span></a>
+    </div>
+  </div>
 </header>
 
 <main id="main">
@@ -69,7 +70,7 @@
         <span class="pill">Web app</span>
         <span class="pill">Design system</span>
       </div>
-      <h1 id="cs-title" class="rise" style="--i:2">Pulsenics <span class="grad-text">System Software</span></h1>
+      <h1 id="cs-title" class="rise" style="--i:2">Pulsenics System Software</h1>
       <p class="lead rise" style="--i:3">The web app Pulsenics and its clients use to manage their testing hardware, run experiments, control probes and analyse electrochemical data.</p>
       <div class="actions rise" style="--i:4">
         <a class="btn primary" href="#overview">Read the case study <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 3v12M4 10l5 5 5-5"/></svg></a>
@@ -89,6 +90,11 @@
         <h2 id="ov-title">Overview</h2>
       </div>
       <div class="win-body" id="ov-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 24px">
+        <div class="grid-3">
+          <div class="tile"><span class="num">Before</span><h3>Code sent straight to the probes</h3><p>The team ran experiments from testbed software, sending commands to the hardware in code.</p></div>
+          <div class="tile"><span class="num">What we did</span><h3>Made those steps visual</h3><p>We met the engineers, mapped how their experiments need to run, and designed each part of the app and its UI system.</p></div>
+          <div class="tile"><span class="num">Result</span><h3>Shipped with the product launch</h3><p>Pulsenics' clients use it today as part of the company's core offering.</p></div>
+        </div>
         <figure class="shot frame">
           <div class="appshot">
             <div class="rail"><img src="images/nav-experiments.png" alt="Side navigation with Experiments selected: Company, Dashboard, Experiments, Facilities, Users, Events, Data, Analytics, Settings, Feedback"></div>
@@ -102,9 +108,10 @@
         <ul class="facts">
           <li><b>Client</b>Pulsenics, Toronto</li>
           <li><b>Product</b>Web app for running experiments and managing probes</li>
-          <li><b>Team</b>Two designers: me and <a href="https://www.marcvarone.com/">Marc Varone</a></li>
+          <li><b>Team</b>Me and <a href="https://www.marcvarone.com/">Marc Varone</a> (50/50), with Pulsenics' backend team</li>
           <li><b>My role</b>Product design and the UI system, from the ground up</li>
-          <li><b>Status</b>Current version of the product</li>
+          <li><b>Timeline</b>Designed from early 2021, shipped a year later</li>
+          <li><b>Status</b>In use</li>
         </ul>
       </div></div></div>
     </section>
@@ -116,12 +123,37 @@
         <h2 id="ctx-title">The brief</h2>
       </div>
       <div class="win-body" id="ctx-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 22px">
-        <p class="h-lg">Design a tool that lets Pulsenics and its clients <span class="grad-text">run experiments and manage every probe</span> they have connected.</p>
+        <p class="h-lg">Design a tool that lets Pulsenics and its clients run experiments and manage every probe they have connected.</p>
         <p class="lead">Pulsenics makes electrochemical impedance spectroscopy (EIS) hardware: probes that test the health and performance of batteries, fuel cells and electrolyzers without damaging them. The software sits between that hardware and the people using it. It has to know what is plugged in where, start and stop measurements, and turn a stream of readings into something an engineer can act on.</p>
-        <div class="grid-3">
-          <div class="tile"><span class="num">Users</span><h3>Technical teams</h3><p>Engineers and researchers who know the chemistry and want precise control, not hand-holding.</p></div>
-          <div class="tile"><span class="num">Data</span><h3>Dense and continuous</h3><p>Measurements stream in from many cells at once, across frequency and time, for hours or days.</p></div>
-          <div class="tile"><span class="num">Hardware</span><h3>Physically nested</h3><p>Facilities hold test stations, test stations hold probes, and probes connect to cells through channels.</p></div>
+        <ul class="points">
+          <li><span class="k">Users</span><div><h3>Technical teams</h3><p>Engineers and researchers who know the chemistry and want precise control.</p></div></li>
+          <li><span class="k">Data</span><div><h3>Dense and continuous</h3><p>Measurements stream in from many cells at once, across frequency and time, for hours or days.</p></div></li>
+          <li><span class="k">Hardware</span><div><h3>Physically nested</h3><p>Facilities hold test stations, test stations hold probes, and probes connect to cells through channels.</p></div></li>
+        </ul>
+      </div></div></div>
+    </section>
+
+    <!-- Process -->
+    <section class="win reveal" id="process" data-win aria-labelledby="proc-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="proc-body" aria-expanded="true"><i></i><i></i></button>
+        <h2 id="proc-title">How we got there</h2>
+      </div>
+      <div class="win-body" id="proc-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 22px">
+        <p class="h-lg">From commands in code to a visual UI</p>
+        <p class="lead">The app launched with the product. Until then, running an experiment meant using testbed software and sending commands to the probes in code. Our goal was to take that series of steps and make it visual.</p>
+        <ol class="steps">
+          <li><div><h3>Meet the engineers</h3><p>We sat down with them and saw how they need an experiment to run.</p></div></li>
+          <li><div><h3>Map the flow</h3><p>We mapped it from plugging in hardware to analysing the results. That map is below.</p></div></li>
+          <li><div><h3>Build it section by section</h3><p>Then we designed each part in turn, from wireframes to final UI.</p></div></li>
+        </ol>
+        <p class="lead">We worked closely with the backend team the whole way, so we understood quickly what was and wasn't possible. There was pushback on both sides at times.</p>
+        <p class="lead">The Figma file still shows the path: an open card sort with Pulsenics staff and user flows, sketches, eight rounds of wireframes, a foundation for the UI system, then the final screens and handoff to developers.</p>
+        <figure class="shot"><img src="images/process-card-sort.jpg" alt="An open card sort board: columns named Unsorted, Dashboard, Probe, Data Uploads, Alerts, Facilities and Other, each holding cards for app features" loading="lazy"><figcaption>An open card sort with Pulsenics staff, from the CEO and engineers to the marketing team</figcaption></figure>
+        <figure class="shot"><img src="images/process-sketch-marc.jpg" alt="Two sketches of the Facilities screen; the right one shows the hardware tree, with test stations branching into probes" loading="lazy"><figcaption>Sketches by <a href="https://www.marcvarone.com/">Marc Varone</a>. The hardware tree on the right became decision 01.</figcaption></figure>
+        <div class="two-up">
+          <figure class="shot"><img src="images/process-wireframe-v1.jpg" alt="Wireframe V1 of the analytics view: grey placeholder panels on top, four line charts below, and the side navigation on the left" loading="lazy"><figcaption>Wireframe V1: analytics as a page of fixed charts</figcaption></figure>
+          <figure class="shot"><img src="images/process-wireframe-v8.jpg" alt="Wireframe V8 of the analytics view: analysis tool chips, start and end dates, and experiment, tag and variable pickers above a Visualization panel" loading="lazy"><figcaption>Wireframe V8: analysis built from experiments, tags and variables. The final version is decision 05.</figcaption></figure>
         </div>
       </div></div></div>
     </section>
@@ -133,7 +165,7 @@
         <h2 id="flow-title">One flow, end to end</h2>
       </div>
       <div class="win-body" id="flow-body"><div class="inner"><div class="pad">
-        <p class="lead" style="margin-bottom: 20px">Everything in the app supports one sequence, from plugging in hardware to explaining what the data shows.</p>
+        <p class="lead" style="margin-bottom: 20px">This is the flow we mapped with the engineers. Everything in the app supports it, from plugging in hardware to explaining what the data shows.</p>
         <ol class="flow">
           <li>Pick the hardware</li>
           <li>Start the experiment</li>
@@ -161,7 +193,7 @@
             <p>Hardware is chosen from a connected tree that matches how the equipment is actually wired: Facilities, then Test Stations, then Probes, then Channels, with each channel showing how many cells are connected.</p>
             <p>Selecting any node dims every branch it doesn't belong to, so it's always clear which cells an experiment will touch. Search sits on top for setups too large to scan.</p>
           </div>
-          <figure class="shot reveal" style="display: flex; flex-direction: column; gap: 12px">
+          <figure class="shot fit reveal" style="display: flex; flex-direction: column; gap: 12px">
             <img src="images/hardware-tree.png" alt="Hardware Selection tree: two facilities branching into test stations, probes and CMU channels, each showing 1 cell connected" loading="lazy">
             <img src="images/hardware-probe-focus.png" alt="The same tree with Probe 1 selected and every unrelated branch dimmed" loading="lazy">
             <figcaption>The full tree, and the focus state when a probe is selected</figcaption>
@@ -172,9 +204,9 @@
           <div class="decision-text">
             <span class="num">02</span>
             <h3>Make starting an experiment one decision</h3>
-            <p>Once hardware is picked, starting is a small pop-up: a start and end time, with two shortcuts for the most common cases, <em>Start Now</em> and <em>No specified end time</em>. Long-running tests don't need a made-up end date.</p>
+            <p>Once hardware is picked, starting is a small pop-up: a start and end time, with two shortcuts for the most common cases, <em>Start Now</em> and <em>No specified end time</em>.</p>
           </div>
-          <figure class="shot reveal"><img src="images/start-experiment.png" alt="Start Experiment pop-up with start and end date and time fields, Start Now and No specified end time checkboxes, and a Start Experiment button" loading="lazy"><figcaption>Start Experiment</figcaption></figure>
+          <figure class="shot fit reveal"><img src="images/start-experiment.png?v=2" alt="Start Experiment pop-up with start and end date and time fields, Start Now and No specified end time checkboxes, and a Start Experiment button" loading="lazy"><figcaption>Start Experiment</figcaption></figure>
         </div>
 
         <div class="decision">
@@ -182,46 +214,33 @@
             <span class="num">03</span>
             <h3>Give direct control of the instrument</h3>
             <p>Probe controls expose what the hardware actually does: choose a probe, set the time between samples, switch between galvanostatic and potentiostatic mode, and enter up to ten frequency and amplitude pairs.</p>
-            <p><em>Send Controls</em> and a red <em>Stop Sampling</em> sit together at the end, so the safe way out is always visible.</p>
+            <p><em>Send Controls</em> and a red <em>Stop Sampling</em> sit together at the end, so the safe way out is always visible. Tabs keep the controls history, alerts and maintenance logs one click away.</p>
           </div>
-          <figure class="shot reveal"><img src="images/probe-controls.png" alt="Probe controls: probe dropdown, time between samples, galvanostatic or potentiostatic mode, a table of ten frequency and amplitude rows with reset buttons, and Send Controls and Stop Sampling buttons" loading="lazy"><figcaption>Probe controls</figcaption></figure>
+          <figure class="shot fit reveal"><img src="images/probe-controls-tabs.png" alt="Probe controls with tabs for Current Controls, Controls History, Alerts and Maintenance Reset Logs; time between samples, galvanostatic or potentiostatic mode, ten frequency and amplitude rows, and Send Controls and Stop Sampling buttons at the bottom right" loading="lazy"><figcaption>Probe controls</figcaption></figure>
         </div>
 
         <div class="decision">
           <div class="decision-text">
             <span class="num">04</span>
             <h3>Keep running work in view</h3>
-            <p>Live experiments get their own table with facility, test station, probe, timing and a progress bar, plus quick actions to open, duplicate or delete. Finished runs move to Saved Experiments, so what's running and what's done never mix.</p>
+            <p>Live experiments get their own table with facility, test station, probe, timing and a progress bar, plus quick actions to open, duplicate or delete. Once a run finishes, it moves to Saved Experiments, so the live table only shows what's actually running.</p>
           </div>
-          <figure class="shot reveal"><img src="images/live-experiments.png" alt="Live Experiments table with four rows and progress bars" loading="lazy"><figcaption>Live experiments</figcaption></figure>
+          <figure class="shot fit reveal"><img src="images/live-experiments.png" alt="Live Experiments table with four rows and progress bars" loading="lazy"><figcaption>Live experiments</figcaption></figure>
         </div>
 
         <div class="decision">
           <div class="decision-text">
             <span class="num">05</span>
-            <h3>Let people mark what happened on the data</h3>
-            <p>Every graph carries its full hardware path (Facility / Test Station / Stack / CMU / Cell), so a chart is never ambiguous. A toolbar covers zoom, select, pan, reset axis, autoscale, grid, spike lines and image export.</p>
-            <p>Selecting a range on the graph creates an <em>Event</em> with a label and time window, and events can be tagged. Anomalies become notes the whole team can find again.</p>
+            <h3>Work with the data in one place</h3>
+            <p>Every graph shows its full hardware path at the top. You always know which cell you're looking at. If something odd shows up, you can select that range and save it as a tagged <em>Event</em>. The whole team can find it later.</p>
+            <p>Adding a visualization reuses the hardware tree, then groups the data the way electrochemists think about it: electrochemical, frequency domain and time domain. Analysis tools such as correlation, regression and moving averages sit in the same app, each opening in its own tab.</p>
           </div>
-          <figure class="shot reveal" style="max-width: 460px; justify-self: center"><img src="images/graph-events.png" alt="Voltage over time graph with a breadcrumb of the hardware path, a chart toolbar, and an Events table below with an Add Event button" loading="lazy"><figcaption>Graph with events</figcaption></figure>
-        </div>
-
-        <div class="decision">
-          <div class="decision-text">
-            <span class="num">06</span>
-            <h3>Group data the way electrochemists think</h3>
-            <p>Adding a visualization reuses the hardware tree, then offers data in three groups: Electrochemical (electrolyte resistance, interfacial capacitor, average power), Frequency domain (Bode and Nyquist plots, phase difference) and Time domain (voltage, current).</p>
-          </div>
-          <figure class="shot reveal"><img src="images/add-visualization.png" alt="Add Visualization pop-up: a hardware tree on top and checkboxes grouped into Electrochemical Data, Frequency Domain Data and Time Domain Data" loading="lazy"><figcaption>Add a visualization</figcaption></figure>
-        </div>
-
-        <div class="decision">
-          <div class="decision-text">
-            <span class="num">07</span>
-            <h3>Analysis in the same place</h3>
-            <p>The Data panel brings analysis tools into the app: auto and cross correlation, linear and multiple regression, moving mean and variance, phase maps. Users pick experiments, tags and variables and a time range, then plot. Each analysis opens in its own tab.</p>
-          </div>
-          <figure class="shot reveal"><img src="images/data-analysis.png" alt="Data panel with a Plotting Data tab, analysis tool chips, start and end date pickers, Experiments, Tags and Variables fields and a Plot button" loading="lazy"><figcaption>Data and analysis</figcaption></figure>
+          <figure class="shot fit reveal" style="display: flex; flex-direction: column; gap: 12px">
+            <img src="images/graph-events.png?v=2" alt="Voltage over time graph with a breadcrumb of the hardware path, a chart toolbar, and an Events table below with an Add Event button" loading="lazy">
+            <img src="images/add-visualization.png" alt="Add Visualization pop-up: a hardware tree on top and checkboxes grouped into Electrochemical Data, Frequency Domain Data and Time Domain Data" loading="lazy">
+            <img src="images/data-analysis.png" alt="Data panel with a Plotting Data tab, analysis tool chips, start and end date pickers, Experiments, Tags and Variables fields and a Plot button" loading="lazy">
+            <figcaption>Events on a graph, adding a visualization, and the analysis panel</figcaption>
+          </figure>
         </div>
 
       </div></div></div>
@@ -234,15 +253,16 @@
         <h2 id="sys-title">Built as a system</h2>
       </div>
       <div class="win-body" id="sys-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 26px">
-        <p class="lead">Marc and I built the UI system from the ground up alongside the screens, so new features could be assembled from parts the team already trusted.</p>
+        <p class="lead">Marc and I built the design system alongside the screens. It gave Pulsenics a set of reusable assets and made prototyping much easier.</p>
 
-        <div class="grid-3">
-          <div class="tile"><span class="num">Sections</span><h3>Collapsible, resizable panels</h3><p>Every area of the app (hardware, tags, live and saved experiments, data, visualizations) is a panel with open, closed and empty states, so people arrange the workspace around the job in front of them.</p></div>
-          <div class="tile"><span class="num">Navigation</span><h3>Nine sections, two widths</h3><p>Dashboard, Experiments, Facilities, Users, Events, Data, Analytics, Settings and Feedback, each with a selected state, plus an icon-only rail for more room.</p></div>
-          <div class="tile"><span class="num">Charts</span><h3>One graph component</h3><p>The same graph, toolbar and events tab are used everywhere data is plotted, in four states from no events to many.</p></div>
-        </div>
+        <ul class="points">
+          <li><span class="k">Sections</span><div><h3>Collapsible, resizable panels</h3><p>Every area of the app (hardware, tags, live and saved experiments, data, visualizations) is a panel that can be opened, closed or resized. Users set the workspace up around what they're working on.</p></div></li>
+          <li><span class="k">Navigation</span><div><h3>Nine sections, two widths</h3><p>Dashboard, Experiments, Facilities, Users, Events, Data, Analytics, Settings and Feedback, each with a selected state, plus a slimmer rail with just the icons for more room.</p></div></li>
+          <li><span class="k">Charts</span><div><h3>One graph component</h3><p>The same graph, toolbar and events tab are used everywhere data is plotted, in four states from no events to many.</p></div></li>
+        </ul>
 
         <figure class="shot"><img src="images/nav-states.png" alt="Ten copies of the side navigation, each with a different section selected" loading="lazy"><figcaption>Navigation, one state per section</figcaption></figure>
+        <figure class="shot"><img src="images/system-buttons.jpg" alt="The button set from the component library: tabs, primary and secondary buttons, analysis tool chips, toggles and radio buttons on a dark background" loading="lazy"><figcaption>Part of the component library: buttons, tabs and analysis chips</figcaption></figure>
 
         <div>
           <p class="h-lg" style="font-size: 22px; margin-bottom: 14px">Colour</p>
@@ -266,11 +286,11 @@
         <span class="spacer"></span>
       </div>
       <div class="win-body" id="next-body"><div class="inner"><div class="pad">
-        <div class="grid-3">
-          <div class="tile"><h3 style="margin-top: 0">Contrast</h3><p>Secondary text and column headers sit close to the panel colour. I'd raise them to meet WCAG AA, which matters for people staring at data all day.</p></div>
-          <div class="tile"><h3 style="margin-top: 0">Inputs on dark</h3><p>The light input fields are the brightest thing on screen. A darker field with a clear focus ring would keep attention on the data.</p></div>
-          <div class="tile"><h3 style="margin-top: 0">Hierarchy</h3><p>Most panels carry the same visual weight. Giving live data more presence than setup controls would help scanning.</p></div>
-        </div>
+        <ul class="points">
+          <li class="solo"><div><h3>Contrast</h3><p>Secondary text and column headers sit close to the panel colour. I'd raise them to meet WCAG AA, which matters for people staring at data all day.</p></div></li>
+          <li class="solo"><div><h3>Inputs on dark</h3><p>The light input fields are the brightest thing on screen. A darker field with a clear focus ring would keep attention on the data.</p></div></li>
+          <li class="solo"><div><h3>Hierarchy</h3><p>Most panels carry the same visual weight. Giving live data more presence than setup controls would help scanning.</p></div></li>
+        </ul>
       </div></div></div>
     </section>
 
@@ -303,6 +323,7 @@
       <ol data-spy>
         <li><a href="#overview" class="is-active">Overview</a></li>
         <li><a href="#context">The brief</a></li>
+        <li><a href="#process">How we got there</a></li>
         <li><a href="#flow">The flow</a></li>
         <li><a href="#decisions">Design decisions</a></li>
         <li><a href="#system">The system</a></li>
@@ -315,11 +336,12 @@
 
   <footer class="foot">
     <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
+      <span>Designed by me, built in Claude Code</span>
   </footer>
   </div>
 </main>
 
-<script src="../../assets/site.js?v=6"></script>
-<script src="../../assets/bg.js?v=6"></script>
+<script src="../../assets/site.js?v=12"></script>
+<script src="../../assets/logo3d.js?v=5"></script>
 </body>
 </html>
