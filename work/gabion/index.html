@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gabion Developments case study | Ahmad Ibrahim</title>
 <meta name="description" content="How Ahmad Ibrahim designed and built the Gabion Developments website in Webflow in two months, as sole designer and builder.">
-<link rel="icon" href="../../favicon.svg?v=5" type="image/svg+xml">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="icon" href="../../favicon.svg?v=6" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png?v=2">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ahmad Ibrahim">
 <meta property="og:title" content="Gabion Developments case study | Ahmad Ibrahim">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=12">
+<link rel="stylesheet" href="../../assets/site.css?v=37">
 <script>
   document.documentElement.classList.add('js');
   setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
@@ -33,28 +33,29 @@
 <div class="backdrop" data-layout="compact" aria-hidden="true"></div>
 
 <header class="topbar">
-  <nav class="wrap" aria-label="Main">
-    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-light.svg?v=4" alt="" width="28" height="36"><span class="logo-name">Ahmad Ibrahim</span></a>
+  <nav class="dock" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-glass.svg?v=2" alt="" width="34" height="37"></a>
+    <span class="dock-sep" aria-hidden="true"></span>
     <ul class="links">
-      <li><a href="../../#work" aria-current="page">Work</a></li>
-      <li><a href="../../#about">About</a></li>
-      <li><a href="../../#earlier">Earlier work</a></li>
-      <li><a href="../../#contact">Contact</a></li>
+        <li><a href="../../#work" aria-label="Work" data-tip="Work" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></a></li>
+        <li><a href="../../#about" aria-label="About" data-tip="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></a></li>
+        <li><a href="../../#earlier" aria-label="Earlier work" data-tip="Earlier work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg></a></li>
+        <li><a href="../../#contact" aria-label="Contact" data-tip="Contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg></a></li>
     </ul>
-    <span class="spacer"></span>
-    <a class="btn sm hide-sm" href="https://www.gabiondevelopments.com">Live site ↗</a>
-    <button class="btn sm primary" data-copy="ahmad.gh.ibrahim@gmail.com">Copy email</button>
-    <button class="btn sm menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Menu">
-      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
-    </button>
-    <div class="sheet" id="sheet">
-      <a href="../../#work">Work</a>
-      <a href="../../#about">About</a>
-      <a href="../../#earlier">Earlier work</a>
-      <a href="../../#contact">Contact</a>
-      <a href="https://www.gabiondevelopments.com">Live site ↗</a>
-    </div>
+    <span class="dock-sep dock-wide" aria-hidden="true"></span>
+    <a class="dock-btn dock-wide" href="https://www.gabiondevelopments.com" target="_blank" rel="noopener" aria-label="Live site" data-tip="Live site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 4.5H19.5v6"/><path d="M19.5 4.5 11 13"/><path d="M17.5 14v4a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h4"/></svg></a>
+    <a class="dock-btn mail" href="mailto:ahmad.gh.ibrahim@gmail.com" data-copy="ahmad.gh.ibrahim@gmail.com" aria-label="Copy email" data-tip="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="3"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></svg></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i></i><i></i><i></i></button>
   </nav>
+  <div class="sheet-host">
+    <div class="sheet" id="sheet">
+      <a href="../../#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Work</span></a>
+      <a href="../../#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg><span>About</span></a>
+      <a href="../../#earlier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg><span>Earlier work</span></a>
+      <a href="../../#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg><span>Contact</span></a>
+      <a href="https://www.gabiondevelopments.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 4.5H19.5v6"/><path d="M19.5 4.5 11 13"/><path d="M17.5 14v4a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h4"/></svg><span>Live site</span></a>
+    </div>
+  </div>
 </header>
 
 <main id="main">
@@ -68,8 +69,8 @@
         <span class="pill">Website design &amp; build</span>
         <span class="pill">Webflow</span>
       </div>
-      <h1 id="cs-title" class="rise" style="--i:2">Gabion <span class="grad-text">Developments</span></h1>
-      <p class="lead rise" style="--i:3">A marketing site for a Toronto design-build firm. It shows finished homes first, explains how the firm works, and makes it easy to book a call.</p>
+      <h1 id="cs-title" class="rise" style="--i:2">Gabion Developments</h1>
+      <p class="lead rise" style="--i:3">A marketing site for a Toronto design-build firm. It puts their finished homes up front and makes booking a call the obvious next step.</p>
       <div class="actions rise" style="--i:4">
         <a class="btn primary" href="https://www.gabiondevelopments.com">Visit the live site <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 13 13 5M7 5h6v6"/></svg></a>
         <a class="btn" href="#overview">Read the case study</a>
@@ -88,10 +89,15 @@
         <h2 id="ov-title">Overview</h2>
       </div>
       <div class="win-body" id="ov-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 24px">
+        <div class="grid-3">
+          <div class="tile"><span class="num">Brief</span><h3>Their work, front and centre</h3><p>A site in the firm's own style that markets its homes and gives people a professional way to reach them.</p></div>
+          <div class="tile"><span class="num">What I did</span><h3>Designed and built it alone</h3><p>Structure, visual design and a responsive Webflow build, in two months, with the owners and their marketing lead.</p></div>
+          <div class="tile"><span class="num">Result</span><h3>Launched in 2022</h3><p>The client loved it. It looked like their work, and the homes do the selling.</p></div>
+        </div>
         <figure class="shot frame sunset">
           <div class="hero-shot">
-            <img src="images/home-hero.jpg" alt="Gabion Developments homepage on desktop: dark navigation bar above a full-width video of a finished living room">
-            <img class="phone" src="images/m-home.jpg" alt="The same homepage on a phone, with the menu collapsed behind a button">
+            <img src="images/home-hero.jpg" alt="Gabion Developments homepage on desktop: dark navigation bar above a video of a finished living room that fills the page">
+            <img class="phone" src="images/m-home.jpg?v=2" alt="The same homepage on a phone, with the menu collapsed behind a button">
           </div>
           <figcaption>Homepage, desktop and mobile</figcaption>
         </figure>
@@ -100,6 +106,7 @@
           <li><b>My role</b>Sole designer and site builder</li>
           <li><b>Platform</b>Webflow</li>
           <li><b>Timeline</b>2 months, concept to launch</li>
+          <li><b>Launched</b>2022</li>
           <li><b>Scope</b>IA, UX/UI, visual design, responsive build</li>
         </ul>
       </div></div></div>
@@ -112,12 +119,8 @@
         <h2 id="brief-title">The brief</h2>
       </div>
       <div class="win-body" id="brief-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 24px">
-        <p class="h-lg">Gabion needed a site to market its home developments, and to give prospective clients a <span class="grad-text">professional way to find them</span>.</p>
-        <ul class="facts">
-          <li><b>Platform</b>Webflow</li>
-          <li><b>Deadline</b>Two months</li>
-          <li><b>Team</b>One designer and builder: me</li>
-        </ul>
+        <p class="h-lg">Gabion needed a site to market its home developments, and to give prospective clients a professional way to find them.</p>
+        <p class="lead">They wanted a site that spoke to their own design style, one that let their work speak first. That's what I led with: a video of a finished home on the homepage, and minimal styling so the photos and video they provided carry the page.</p>
       </div></div></div>
     </section>
 
@@ -128,10 +131,36 @@
         <h2 id="goals-title">What the site had to do</h2>
       </div>
       <div class="win-body" id="goals-body"><div class="inner"><div class="pad">
-        <div class="grid-3">
-          <div class="tile"><span class="num">01</span><h3>Sell with finished work</h3><p>People judge a builder by what it has already built, so the site had to put real homes in front of visitors straight away.</p></div>
-          <div class="tile"><span class="num">02</span><h3>Make the process feel manageable</h3><p>Building or renovating a home is a big, unfamiliar decision. The site needed to show what happens, and in what order, before anyone picks up the phone.</p></div>
-          <div class="tile"><span class="num">03</span><h3>Turn interest into a conversation</h3><p>One clear next step, repeated across the site: book a call.</p></div>
+        <ul class="points">
+          <li class="solo"><div><h3>Sell with finished work</h3><p>People judge a builder by what it has already built, so the site had to put real homes in front of visitors straight away.</p></div></li>
+          <li class="solo"><div><h3>Make the process feel manageable</h3><p>Building or renovating a home is a big, unfamiliar decision. The site needed to show what happens, and in what order, before anyone picks up the phone.</p></div></li>
+          <li class="solo"><div><h3>Turn interest into a conversation</h3><p>One clear next step, repeated across the site: book a call.</p></div></li>
+        </ul>
+      </div></div></div>
+    </section>
+
+    <!-- Process -->
+    <section class="win reveal" id="process" data-win aria-labelledby="proc-title">
+      <div class="win-bar">
+        <button class="xbtn" aria-controls="proc-body" aria-expanded="true"><i></i><i></i></button>
+        <h2 id="proc-title">How we worked</h2>
+      </div>
+      <div class="win-body" id="proc-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 22px">
+        <p class="h-lg">Two months, with feedback the whole way through</p>
+        <p class="lead">We started with a kickoff with the owners. After that I worked with their marketing lead on the rest of the site, with the owners checking in along the way. They gave feedback continuously and supplied the content: the photos and videos of their homes.</p>
+        <ol class="steps">
+          <li><div><h3>Structure</h3><p>Mapped the seven pages and the path from a first visit to Book a Call.</p></div></li>
+          <li><div><h3>Design</h3><p>Set the typography, grid and image treatments so the photography leads.</p></div></li>
+          <li><div><h3>Build</h3><p>Built responsive pages in Webflow from reusable sections, so the firm's team can edit copy and add projects without a developer.</p></div></li>
+          <li><div><h3>Launch</h3><p>Checked every page across screen sizes, then went live.</p></div></li>
+        </ol>
+        <p class="lead">Early concepts, before the final direction:</p>
+        <div class="two-up">
+          <figure class="shot"><img src="images/process-home-v1.jpg" alt="Early homepage concept: a photo carousel of a finished modern house, then a photo of a fireplace and stacked firewood beside placeholder text" loading="lazy"><figcaption>Home v1 opened on a photo carousel. The live site moved to a video of a finished home.</figcaption></figure>
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <figure class="shot"><img src="images/process-contact-a.jpg" alt="Contact page concept with a dark navy header and an open form under the heading What should we develop together?" loading="lazy"></figure>
+            <figure class="shot"><img src="images/process-contact-b.jpg" alt="Contact page concept with a light blue header and the form inside an outlined Contact Us panel" loading="lazy"><figcaption>Two directions for the contact page</figcaption></figure>
+          </div>
         </div>
       </div></div></div>
     </section>
@@ -147,15 +176,15 @@
           <p class="h-lg">A flat structure with seven pages</p>
           <p class="lead" style="margin-top: 10px">The only nested level is the individual project pages, so nothing sits more than two clicks from the homepage.</p>
         </div>
-        <div class="grid-4">
-          <div class="tile"><span class="num">01</span><h3>Home</h3><p>Video hero, welcome, philosophy, Book a Call banner</p></div>
-          <div class="tile"><span class="num">02</span><h3>Work With Us</h3><p>The four-stage journey</p></div>
-          <div class="tile hl"><span class="num">03</span><h3>Projects</h3><p>Selected work and upcoming projects (below)</p></div>
-          <div class="tile"><span class="num">04</span><h3>Testimonials</h3><p>Homeowner quotes; pick a name to read each one</p></div>
-          <div class="tile"><span class="num">05</span><h3>Blog</h3><p>Image gallery linking to Instagram</p></div>
-          <div class="tile"><span class="num">06</span><h3>Careers</h3><p>Join Our Team, with a link to current openings</p></div>
-          <div class="tile"><span class="num">07</span><h3>Contact</h3><p>Enquiry form with a &ldquo;How did you hear about us?&rdquo; field</p></div>
-        </div>
+        <ul class="points">
+          <li><span class="k">Home</span><div><p>Video hero, welcome, philosophy, Book a Call banner</p></div></li>
+          <li><span class="k">Work With Us</span><div><p>The journey, in four stages</p></div></li>
+          <li><span class="k">Projects</span><div><p>Selected work and upcoming projects (below)</p></div></li>
+          <li><span class="k">Testimonials</span><div><p>Homeowner quotes; pick a name to read each one</p></div></li>
+          <li><span class="k">Blog</span><div><p>Image gallery linking to Instagram</p></div></li>
+          <li><span class="k">Careers</span><div><p>Join Our Team, with a link to current openings</p></div></li>
+          <li><span class="k">Contact</span><div><p>Enquiry form with a &ldquo;How did you hear about us?&rdquo; field</p></div></li>
+        </ul>
         <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
           <div class="tile">
             <h3 style="margin-top: 0">Projects: Selected work</h3>
@@ -184,27 +213,27 @@
           <div class="decision-text">
             <span class="num">01</span>
             <h3>Open with a finished home</h3>
-            <p>The homepage opens on a full-bleed video of a completed project, 111 Malvern Ave, with very little copy. The first thing a visitor sees is the product, not a pitch about the company. The welcome statement and philosophy come after, once the work has done its job.</p>
+            <p>The homepage opens on a video of a completed project, 111 Malvern Ave, that fills the whole screen. There's very little copy. Before any copy about the company, you see one of their homes. The welcome and philosophy sections come after that.</p>
           </div>
-          <figure class="shot reveal"><img src="images/home-full.jpg" alt="The full Gabion homepage: video hero, Welcome to Gabion, Our Philosophy, then the Book a Call banner and footer" loading="lazy"><figcaption>Homepage, full length</figcaption></figure>
+          <figure class="shot reveal"><img src="images/home-full.jpg?v=2" alt="The full Gabion homepage: video hero, Welcome to Gabion, Our Philosophy, then the Book a Call banner and footer" loading="lazy"><figcaption>Homepage, full length</figcaption></figure>
         </div>
 
         <div class="decision">
           <div class="decision-text">
             <span class="num">02</span>
             <h3>Let the photography carry the design</h3>
-            <p>The interface is deliberately quiet: clean typography, generous white space and a restrained palette. Every page is built around large images, so the homes set the tone and the UI stays out of their way. Each project page leads with a photo carousel, keeps the write-up short, and links to the previous and next project so visitors can keep browsing.</p>
+            <p>I kept the interface simple so the photos could do the work. Every page is built around large images, with plenty of white space and very little else competing for attention. Each project page leads with a photo carousel, keeps the description short, and links to the previous and next project so visitors can keep browsing.</p>
           </div>
-          <figure class="shot reveal"><img src="images/project-cedarvale.jpg" alt="Cedarvale project page: a large kitchen photo in a carousel with previous and next arrows, the project name and a short description" loading="lazy"><figcaption>Project page: Cedarvale</figcaption></figure>
+          <figure class="shot reveal"><img src="images/project-cedarvale.jpg?v=2" alt="Cedarvale project page: a large kitchen photo in a carousel with previous and next arrows, the project name and a short description" loading="lazy"><figcaption>Project page: Cedarvale</figcaption></figure>
         </div>
 
         <div class="decision">
           <div class="decision-text">
             <span class="num">03</span>
             <h3>Separate what is built from what is coming</h3>
-            <p>The Projects page splits Selected Work from Upcoming Projects. Finished homes are shown in photographs and each gets its own page. Upcoming ones are shown as architectural drawings, so the difference is clear at a glance. The site stays honest about what is complete, and still shows a visitor that the firm has a pipeline.</p>
+            <p>The Projects page splits Selected Work from Upcoming Projects. Finished homes are shown in photographs and each gets its own page. Upcoming ones are shown as architectural drawings, so the difference is clear at a glance. Visitors can see what's finished, and that there's more on the way.</p>
           </div>
-          <figure class="shot reveal"><img src="images/projects.jpg" alt="Projects page: three photographed homes under Selected Work, then line drawings of upcoming houses under Upcoming Projects" loading="lazy"><figcaption>Projects: photos for finished work, drawings for what is coming</figcaption></figure>
+          <figure class="shot reveal"><img src="images/projects.jpg?v=3" alt="Projects page: photographed homes under Selected Work, then line drawings of upcoming houses under Upcoming Projects" loading="lazy"><figcaption>Projects: photos for finished work, drawings for what is coming</figcaption></figure>
         </div>
 
         <div class="decision">
@@ -212,29 +241,29 @@
             <span class="num">04</span>
             <h3>Show the process as four stages</h3>
             <p>Work With Us walks through Exploring, Imagining, Creating and Finalizing. Each stage explains what Gabion does at that point, such as visualizing design options and submitting the permit while Imagining, or monitoring construction while Creating. The images move from a pencil sketch to a rendering, a framing photo and the finished house, so the page shows the project taking shape.</p>
-            <p>It answers the question every first-time client has: what happens after I get in touch?</p>
+            <p>It shows a new client what happens after they get in touch.</p>
           </div>
-          <figure class="shot reveal"><img src="images/work-with-us-journey.jpg" alt="Work With Us: Your 4 Step Journey, with a pencil sketch for Exploring, a rendering for Imagining and a framing photo for Creating" loading="lazy"><figcaption>Work With Us: the journey, from sketch to site</figcaption></figure>
+          <figure class="shot reveal"><img src="images/work-with-us-journey.jpg?v=2" alt="Work With Us: Your 4 Step Journey, with a pencil sketch for Exploring, a rendering for Imagining and a framing photo for Creating" loading="lazy"><figcaption>Work With Us: the journey, from sketch to site</figcaption></figure>
         </div>
 
         <div class="decision">
           <div class="decision-text">
             <span class="num">05</span>
             <h3>One call to action, repeated</h3>
-            <p>Book a Call is the main way to start. A banner reading &ldquo;Your Space Defines You&rdquo; closes almost every page, from the homepage to each project and the contact page, so a visitor is never more than a scroll from the next step. The footer below it repeats the email, phone number and address. One primary action beats a menu of competing ones.</p>
+            <p>Book a Call is the main way to start. A banner reading &ldquo;Your Space Defines You&rdquo; closes almost every page, from the homepage to each project and the contact page, so there's always a way to get in touch close by. The footer below it repeats the email, phone number and address.</p>
           </div>
-          <figure class="shot reveal"><img src="images/book-a-call.jpg" alt="The Your Space Defines You banner with a Book a Call button, above the footer with email, phone, social links and address" loading="lazy"><figcaption>The Book a Call banner and footer, repeated site-wide</figcaption></figure>
+          <figure class="shot reveal"><img src="images/book-a-call.jpg?v=2" alt="The Your Space Defines You banner with a Book a Call button, above the footer with email, phone, social links and address" loading="lazy"><figcaption>The Book a Call banner and footer, repeated across the site</figcaption></figure>
         </div>
 
         <div class="decision">
           <div class="decision-text">
             <span class="num">06</span>
             <h3>Proof from clients, and a blog that runs on Instagram</h3>
-            <p>Testimonials gives homeowners' own words their own page: one quote at a time on desktop, chosen from a row of names, and the full list of quotes stacked on mobile. The Blog is a gallery of image tiles that link out to the firm's Instagram posts, so the team posts in one place and the site stays current without a second publishing job.</p>
+            <p>Testimonials gives homeowners' own words their own page: one quote at a time on desktop, chosen from a row of names, and the full list of quotes stacked on mobile. The Blog is a gallery of image tiles that link out to the firm's Instagram posts, so the team only has to post once and the site stays up to date.</p>
           </div>
           <figure class="shot reveal" style="display: flex; flex-direction: column; gap: 12px">
-            <img src="images/testimonials.jpg" alt="Testimonials page: one homeowner quote above a row of four names, the selected name highlighted" loading="lazy">
-            <img src="images/blog.jpg" alt="Blog page: a two-column grid of interior photos" loading="lazy">
+            <img src="images/testimonials.jpg?v=2" alt="Testimonials page: one homeowner quote above a row of four names, the selected name highlighted" loading="lazy">
+            <img src="images/blog.jpg?v=2" alt="Blog page: a grid of interior photos in two columns" loading="lazy">
             <figcaption>Testimonials and Blog</figcaption>
           </figure>
         </div>
@@ -251,29 +280,10 @@
       <div class="win-body" id="resp-body"><div class="inner"><div class="pad">
         <p class="lead" style="margin-bottom: 26px">The navigation collapses behind a menu button, paired layouts stack image over text, and grids drop to one column. Components that rely on a wide screen change form: the testimonial selector becomes a simple list of every quote.</p>
         <div class="phones">
-          <figure class="shot"><img src="images/m-home.jpg" alt="Homepage on a phone: video hero under a compact header with a menu button" loading="lazy"><figcaption><strong>Home.</strong> The menu folds into one button.</figcaption></figure>
-          <figure class="shot"><img src="images/m-work-with-us.jpg" alt="Work With Us on a phone: Who We Are text above the start of the four-step journey" loading="lazy"><figcaption><strong>Work With Us.</strong> Each stage stacks its image above the text.</figcaption></figure>
-          <figure class="shot"><img src="images/m-projects.jpg" alt="Projects on a phone: Selected Work cards in a single column" loading="lazy"><figcaption><strong>Projects.</strong> The two-column grid drops to one.</figcaption></figure>
-          <figure class="shot"><img src="images/m-testimonials.jpg" alt="Testimonials on a phone: quotes listed one after another, each signed by the homeowner" loading="lazy"><figcaption><strong>Testimonials.</strong> The name selector becomes a list of quotes.</figcaption></figure>
-        </div>
-      </div></div></div>
-    </section>
-
-    <!-- Build -->
-    <section class="win reveal" id="build" data-win aria-labelledby="build-title">
-      <div class="win-bar">
-        <button class="xbtn" aria-controls="build-body" aria-expanded="true"><i></i><i></i></button>
-        <h2 id="build-title">The build</h2>
-        <span class="spacer"></span>
-      </div>
-      <div class="win-body" id="build-body"><div class="inner"><div class="pad">
-        <p class="h-lg">Two months, one person, four passes</p>
-        <p class="lead" style="margin: 10px 0 24px">I chose Webflow so the site could be designed and built in the same tool, and so the firm's team can edit copy and add new projects without a developer.</p>
-        <div class="grid-4">
-          <div class="tile"><span class="num">Step 1</span><h3>Structure</h3><p>Mapped the seven pages and the path from a first visit to Book a Call.</p></div>
-          <div class="tile"><span class="num">Step 2</span><h3>Design</h3><p>Set the typography, grid and image treatments so the photography leads.</p></div>
-          <div class="tile"><span class="num">Step 3</span><h3>Build</h3><p>Built responsive pages in Webflow from reusable sections.</p></div>
-          <div class="tile"><span class="num">Step 4</span><h3>Launch</h3><p>Checked every page across screen sizes, then went live.</p></div>
+          <figure class="shot"><img src="images/m-home.jpg?v=2" alt="Homepage on a phone: video hero under a compact header with a menu button" loading="lazy"><figcaption><strong>Home.</strong> The menu folds into one button.</figcaption></figure>
+          <figure class="shot"><img src="images/m-work-with-us.jpg?v=2" alt="Work With Us on a phone: Who We Are text above the start of the journey's four steps" loading="lazy"><figcaption><strong>Work With Us.</strong> Each stage stacks its image above the text.</figcaption></figure>
+          <figure class="shot"><img src="images/m-projects.jpg?v=2" alt="Projects on a phone: Selected Work cards in a single column" loading="lazy"><figcaption><strong>Projects.</strong> Two columns drop to one.</figcaption></figure>
+          <figure class="shot"><img src="images/m-testimonials.jpg?v=2" alt="Testimonials on a phone: quotes listed one after another, each signed by the homeowner" loading="lazy"><figcaption><strong>Testimonials.</strong> The name selector becomes a list of quotes.</figcaption></figure>
         </div>
       </div></div></div>
     </section>
@@ -286,8 +296,8 @@
       </div>
       <div class="win-body" id="result-body"><div class="inner"><div class="pad contact">
         <div style="flex: 1 1 360px">
-          <h2 id="result-title" class="h-lg">A live site the firm can send people to</h2>
-          <p class="lead" style="margin: 10px 0 22px">Gabion Developments now has a site that shows its work, explains how it works with clients and gives them a direct way to book a call.</p>
+          <h2 id="result-title" class="h-lg">Launched in 2022, and the client loved it</h2>
+          <p class="lead" style="margin: 10px 0 22px">It looked like their work, which was the whole point. I handed it over after launch and don't maintain it now.</p>
           <a class="btn primary" href="https://www.gabiondevelopments.com">Visit gabiondevelopments.com ↗</a>
         </div>
       </div></div></div>
@@ -306,10 +316,10 @@
         <li><a href="#overview" class="is-active">Overview</a></li>
         <li><a href="#brief">Brief</a></li>
         <li><a href="#goals">Goals</a></li>
+        <li><a href="#process">How we worked</a></li>
         <li><a href="#structure">Structure</a></li>
         <li><a href="#decisions">Design decisions</a></li>
         <li><a href="#responsive">Responsive</a></li>
-        <li><a href="#build">The build</a></li>
         <li><a href="#result">Result</a></li>
       </ol>
     </div>
@@ -318,11 +328,12 @@
 
   <footer class="foot">
     <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
+      <span>Designed by me, built in Claude Code</span>
   </footer>
   </div>
 </main>
 
-<script src="../../assets/site.js?v=6"></script>
-<script src="../../assets/bg.js?v=6"></script>
+<script src="../../assets/site.js?v=12"></script>
+<script src="../../assets/logo3d.js?v=5"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knowledge Leap | Ahmad Ibrahim</title>
 <meta name="description" content="Knowledge Leap, Ahmad Ibrahim's OCAD University thesis: an open-source augmented reality app for Magic Leap that turns everyday surroundings into something you can learn from.">
-<link rel="icon" href="../../favicon.svg?v=5" type="image/svg+xml">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="icon" href="../../favicon.svg?v=6" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png?v=2">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ahmad Ibrahim">
 <meta property="og:title" content="Knowledge Leap | Ahmad Ibrahim">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=12">
+<link rel="stylesheet" href="../../assets/site.css?v=37">
 <link rel="stylesheet" href="kl.css?v=4">
 <script>
   document.documentElement.classList.add('js');
@@ -37,28 +37,29 @@
 </div>
 
 <header class="topbar">
-  <nav class="wrap" aria-label="Main">
-    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-light.svg?v=4" alt="" width="28" height="36"><span class="logo-name">Ahmad Ibrahim</span></a>
+  <nav class="dock" aria-label="Main">
+    <a class="logo" href="../../" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="../../assets/brand/logo-glass.svg?v=2" alt="" width="34" height="37"></a>
+    <span class="dock-sep" aria-hidden="true"></span>
     <ul class="links">
-      <li><a href="../../#work">Work</a></li>
-      <li><a href="../../#about">About</a></li>
-      <li><a href="../../#earlier" aria-current="page">Earlier work</a></li>
-      <li><a href="../../#contact">Contact</a></li>
+        <li><a href="../../#work" aria-label="Work" data-tip="Work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg></a></li>
+        <li><a href="../../#about" aria-label="About" data-tip="About"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></a></li>
+        <li><a href="../../#earlier" aria-label="Earlier work" data-tip="Earlier work" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg></a></li>
+        <li><a href="../../#contact" aria-label="Contact" data-tip="Contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg></a></li>
     </ul>
-    <span class="spacer"></span>
-    <a class="btn sm hide-sm" href="#film">Watch the film</a>
-    <button class="btn sm primary" data-copy="ahmad.gh.ibrahim@gmail.com">Copy email</button>
-    <button class="btn sm menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Menu">
-      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
-    </button>
-    <div class="sheet" id="sheet">
-      <a href="../../#work">Work</a>
-      <a href="../../#about">About</a>
-      <a href="../../#earlier">Earlier work</a>
-      <a href="../../#contact">Contact</a>
-      <a href="#film">Watch the film</a>
-    </div>
+    <span class="dock-sep dock-wide" aria-hidden="true"></span>
+    <a class="dock-btn dock-wide" href="#film" aria-label="Watch the film" data-tip="Watch the film"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.8v6.4l5.2-3.2z"/></svg></a>
+    <a class="dock-btn mail" href="mailto:ahmad.gh.ibrahim@gmail.com" data-copy="ahmad.gh.ibrahim@gmail.com" aria-label="Copy email" data-tip="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="3"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></svg></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sheet" aria-label="Open menu"><i></i><i></i><i></i></button>
   </nav>
+  <div class="sheet-host">
+    <div class="sheet" id="sheet">
+      <a href="../../#work"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Work</span></a>
+      <a href="../../#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg><span>About</span></a>
+      <a href="../../#earlier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="4.5" rx="1.5"/><path d="M5.5 9v8.5a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V9"/><path d="M10 13h4"/></svg><span>Earlier work</span></a>
+      <a href="../../#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a7.5 7.5 0 0 1-11 6.6L4.5 20l1.4-4.2A7.5 7.5 0 1 1 20 12z"/></svg><span>Contact</span></a>
+      <a href="#film"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.8v6.4l5.2-3.2z"/></svg><span>Watch the film</span></a>
+    </div>
+  </div>
 </header>
 
 <main id="main">
@@ -68,7 +69,7 @@
     <div class="wrap">
       <img class="logo-float rise" style="--i:0" src="media/logo.png" alt="Knowledge Leap logo: a hexagonal globe">
       <h1 id="kl-title" class="rise" style="--i:1">Knowledge Leap</h1>
-      <p class="lead rise" style="--i:2">A new way to see the world. An open-source augmented reality app that turns everyday surroundings into something you can learn from.</p>
+      <p class="lead rise" style="--i:2">A new way to see the world. An open source augmented reality app that turns everyday surroundings into something you can learn from.</p>
       <div class="card-top rise" style="--i:3">
         <span class="pill">OCAD University thesis</span>
         <span class="pill">AR concept</span>
@@ -97,7 +98,7 @@
       </div>
 
       <div class="captions" aria-live="polite">
-        <div class="cap"><h2>Imagine a world that <span class="grad-text">explains itself</span>.</h2><p>Everything around you has a story: what it's made of, how much energy it uses, what it's connected to.</p></div>
+        <div class="cap"><h2>Imagine a world that explains itself.</h2><p>Everything around you has a story: what it's made of, how much energy it uses, what it's connected to.</p></div>
         <div class="cap"><h2>Powered by three technologies</h2><p>Knowledge Leap brings those stories into the room you're standing in, using three things Magic Leap makes possible.</p></div>
         <div class="cap"><h2>Magic Leap</h2><p>A headset that places digital content in the real room around you, so information sits right next to the thing it describes.</p></div>
         <div class="cap"><h2>Magicverse</h2><p>Magic Leap's vision of persistent digital layers over the physical world, from energy and mobility to health. Knowledge Leap adds a layer for learning.</p></div>
@@ -112,7 +113,7 @@
   <section class="chapter full rainy center" id="lenses" aria-labelledby="lenses-title">
     <div class="wrap">
       <p class="kicker reveal">How it works</p>
-      <h2 id="lenses-title" class="big reveal">Five lenses. <span class="grad-text">One room, seen five ways.</span></h2>
+      <h2 id="lenses-title" class="big reveal">Five lenses. One room, seen five ways.</h2>
       <p class="lead reveal" style="margin-top: 22px">A lens is a way of looking. Pick one from the selector and the room changes to show something new. Knowledge Leap launches with five.</p>
       <nav class="selector reveal" aria-label="Lenses">
         <a class="lens-chip" href="#auto" style="--n:0; --c: var(--auto)"><img src="media/icon-auto.png" alt="">Auto</a>
@@ -257,7 +258,7 @@
           <li><b>My work</b>Concept, UX/UI and the lens system</li>
           <li><b>Motion</b>AR mockup videos made in After Effects</li>
         </ul>
-        <p class="muted" style="font-size: 15px">Credits: Magic Leap, Magicverse and the Magic Leap headset image are © Magic Leap, Inc. Knowledge Leap was a student concept designed for their platform and is not affiliated with Magic Leap. Room, city and street photography is third-party imagery used for illustration.</p>
+        <p class="muted" style="font-size: 15px">Credits: Magic Leap, Magicverse and the Magic Leap headset image are © Magic Leap, Inc. Knowledge Leap was a student concept designed for their platform and is not affiliated with Magic Leap. Room, city and street photography comes from other sources and is used for illustration.</p>
       </div></div></div>
     </section>
 
@@ -268,11 +269,13 @@
 
     <footer class="foot">
       <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
+      <span>Designed by me, built in Claude Code</span>
     </footer>
   </div>
 </main>
 
-<script src="../../assets/site.js?v=6"></script>
+<script src="../../assets/site.js?v=12"></script>
+<script src="../../assets/logo3d.js?v=5"></script>
 <script src="kl.js?v=5"></script>
 </body>
 </html>
