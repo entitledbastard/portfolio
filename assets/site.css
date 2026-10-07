@@ -659,7 +659,7 @@ div.card { cursor: default; }
 @media (max-width: 600px) {
   .dock .links, .dock .dock-wide, .dock .dock-sep { display: none; }
   .menu-toggle { display: block; }
-  .topbar .dock { gap: 6px; padding: 0 6px; }
+  .topbar .dock { min-width: 232px; justify-content: space-between; gap: 18px; height: 60px; padding: 0 10px; }
 }
 
 /* Inset glass panels share one edge treatment (DuoVillage's own panels included) */
