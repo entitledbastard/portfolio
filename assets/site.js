@@ -1,4 +1,4 @@
-// Site behaviours: preloader, windows, reveals, card tilt, filters, copy email, menu, section highlight.
+// Site behaviours: preloader, windows, reveals, tablet tilt (cards and hero), filters, copy email, menu, section highlight.
 (function () {
   const root = document.documentElement;
   const $ = (s, el = document) => el.querySelector(s);
@@ -67,28 +67,55 @@
     reveals.forEach((el) => el.classList.add('in'));
   }
 
-  // ---------- Card tilt toward the cursor ----------
+  // ---------- Work cards: the tablet tilts toward the cursor ----------
   if (!reduced && matchMedia('(hover: hover)').matches) {
     $$('.card').forEach((card) => {
+      const tab = $('.monitor', card);
+      if (!tab) return;
       card.addEventListener('pointermove', (e) => {
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        card.classList.add('tilting');
-        card.style.setProperty('--ry', (x * 7).toFixed(2) + 'deg');
-        card.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg');
+        tab.classList.add('tilting');
+        tab.style.setProperty('--ry', (x * 18).toFixed(2) + 'deg');
+        tab.style.setProperty('--rx', (-y * 14).toFixed(2) + 'deg');
+        tab.style.setProperty('--gx', (50 + x * 70).toFixed(1) + '%');
       });
       card.addEventListener('pointerleave', () => {
-        card.classList.remove('tilting');
-        card.style.setProperty('--rx', '0deg');
-        card.style.setProperty('--ry', '0deg');
+        tab.classList.remove('tilting');
+        tab.style.setProperty('--rx', '0deg');
+        tab.style.setProperty('--ry', '0deg');
+        tab.style.setProperty('--gx', '50%');
       });
+    });
+  }
+
+  // ---------- Home hero: the featured tablet leans toward the cursor anywhere in the hero ----------
+  const heroTab = $('.hero-work .monitor');
+  const hero = $('.landing');
+  if (heroTab && hero && !reduced && matchMedia('(hover: hover)').matches) {
+    hero.addEventListener('pointermove', (e) => {
+      const r = heroTab.getBoundingClientRect();
+      const x = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width * 0.9)));
+      const y = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height * 1.4)));
+      heroTab.classList.add('tilting');
+      heroTab.style.setProperty('--ry', (x * 10).toFixed(2) + 'deg');
+      heroTab.style.setProperty('--rx', (-y * 8).toFixed(2) + 'deg');
+      heroTab.style.setProperty('--gx', (50 + x * 35).toFixed(1) + '%');
+    });
+    hero.addEventListener('pointerleave', () => {
+      heroTab.classList.remove('tilting');
+      ['--rx', '--ry'].forEach((v) => heroTab.style.setProperty(v, '0deg'));
+      heroTab.style.setProperty('--gx', '50%');
     });
   }
 
   // ---------- Copy email ----------
   $$('[data-copy]').forEach((btn) => {
-    btn.addEventListener('click', async () => {
+    btn.addEventListener('click', async (e) => {
+      // In the top bar on phones, the button opens the mail app instead of copying
+      if (btn.matches('a[href^="mailto:"]') && matchMedia('(max-width: 860px)').matches) return;
+      e.preventDefault();
       const value = btn.getAttribute('data-copy');
       try {
         await navigator.clipboard.writeText(value);
@@ -103,9 +130,25 @@
   const toggle = $('.menu-toggle');
   const sheet = $('.sheet');
   function setSheet(open) {
-    if (!toggle || !sheet) return;
+    if (!toggle || !sheet || open === sheet.classList.contains('open')) return;
+    // Where the third line sits, relative to the pane: the pane grows out of it and folds back into it
+    const t = toggle.getBoundingClientRect();
+    const box = sheet.getBoundingClientRect();
+    sheet.style.setProperty('--ly', (t.top + 27 - box.top).toFixed(1) + 'px');
+    sheet.style.setProperty('--lr', (box.right - (t.left + 33)).toFixed(1) + 'px');
+    sheet.style.setProperty('--lw', '22px');
+    sheet.classList.remove('closing');
     sheet.classList.toggle('open', open);
+    if (!open && !reduced) {
+      sheet.classList.add('closing');
+      sheet.addEventListener('animationend', function done(e) {
+        if (e.target !== sheet) return;
+        sheet.classList.remove('closing');
+        sheet.removeEventListener('animationend', done);
+      });
+    }
     toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
   toggle?.addEventListener('click', () => setSheet(!sheet.classList.contains('open')));
   $$('.sheet a').forEach((a) => a.addEventListener('click', () => setSheet(false)));
