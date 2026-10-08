@@ -16,6 +16,7 @@
   }
   let seen = false;
   try { seen = sessionStorage.getItem('ai-seen') === '1'; sessionStorage.setItem('ai-seen', '1'); } catch (e) {}
+  if (/[?&]intro\b/.test(location.search)) seen = false; // add ?intro to the URL to replay the preloader
   if (!pre || seen || reduced) {
     pre?.remove();
     root.classList.add('ready');
@@ -110,11 +111,57 @@
     });
   }
 
+  // ---------- Case studies: "On this page" starts beside the hero, then sticks as you scroll ----------
+  const toc = $('.toc'), heroTop = $('.landing.short .crumbs');
+  if (toc && heroTop) {
+    const lift = () => {
+      toc.style.setProperty('--toc-lift', '0px');
+      const d = toc.getBoundingClientRect().top - heroTop.getBoundingClientRect().top;
+      toc.style.setProperty('--toc-lift', Math.max(0, d) + 'px');
+    };
+    lift();
+    addEventListener('resize', lift);
+    addEventListener('load', lift);
+  }
+
+  // ---------- Phones: the tablets lean with the device's motion, like they do with the cursor ----------
+  const tablets = $$('.monitor');
+  if (tablets.length && !reduced && matchMedia('(hover: none)').matches && 'DeviceOrientationEvent' in window) {
+    let rest = null, tx = 0, ty = 0, cx = 0, cy = 0, running = false;
+    const step = () => {
+      cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+      tablets.forEach((t) => {
+        t.style.setProperty('--ry', (cx * 14).toFixed(2) + 'deg');
+        t.style.setProperty('--rx', (-cy * 10).toFixed(2) + 'deg');
+        t.style.setProperty('--gx', (50 + cx * 45).toFixed(1) + '%');
+      });
+      if (Math.abs(tx - cx) > 0.002 || Math.abs(ty - cy) > 0.002) requestAnimationFrame(step); else running = false;
+    };
+    const onTilt = (e) => {
+      if (e.beta == null || e.gamma == null) return;
+      // in landscape the axes swap
+      const angle = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
+      let lr = e.gamma, fb = e.beta;
+      if (angle === 90) { lr = e.beta; fb = -e.gamma; } else if (angle === -90 || angle === 270) { lr = -e.beta; fb = e.gamma; }
+      if (!rest) { rest = { lr, fb }; tablets.forEach((t) => t.classList.add('tilting')); }
+      // measured against however the phone is being held, slowly re-centring
+      rest.lr += (lr - rest.lr) * 0.01; rest.fb += (fb - rest.fb) * 0.01;
+      tx = Math.max(-1, Math.min(1, (lr - rest.lr) / 22));
+      ty = Math.max(-1, Math.min(1, (fb - rest.fb) / 22));
+      if (!running) { running = true; requestAnimationFrame(step); }
+    };
+    // Listen straight away (Android); iOS only sends motion once allowed, so ask on the first tap
+    addEventListener('deviceorientation', onTilt);
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      addEventListener('touchend', () => { DeviceOrientationEvent.requestPermission().catch(() => {}); }, { once: true });
+    }
+  }
+
   // ---------- Copy email ----------
   $$('[data-copy]').forEach((btn) => {
     btn.addEventListener('click', async (e) => {
-      // In the top bar on phones, the button opens the mail app instead of copying
-      if (btn.matches('a[href^="mailto:"]') && matchMedia('(max-width: 860px)').matches) return;
+      // On touch devices the top-bar button opens the mail app; with a mouse it copies (even in a narrow window)
+      if (btn.matches('a[href^="mailto:"]') && matchMedia('(hover: none)').matches) return;
       e.preventDefault();
       const value = btn.getAttribute('data-copy');
       try {
