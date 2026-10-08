@@ -541,6 +541,12 @@ div.card { cursor: default; }
 .steps li::before { content: counter(st); font-family: var(--round); font-size: 22px; line-height: 1.2; color: var(--amber); }
 .steps h3 { font-size: 18px; margin: 0 0 2px; }
 .steps p { color: var(--text-2); }
+/* Home: how I work, steps beside the AI note */
+.how { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.how .tile h3 { font-size: 20px; margin-bottom: 10px; }
+.how .tile p { color: var(--text-2); }
+.how .tile p + p { margin-top: 12px; }
+@media (max-width: 860px) { .how { grid-template-columns: minmax(0, 1fr); } }
 .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
 .tile { padding: 20px; border-radius: var(--r-img); background: var(--slate-3); transition: transform 300ms var(--ease), filter 200ms; }
 .tile .num { font-family: var(--round); font-size: 15px; color: var(--muted); }
@@ -617,8 +623,9 @@ div.card { cursor: default; }
   .projects { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 600px) {
-  .rows li { grid-template-columns: minmax(0, 1fr) auto; }
-  .rows span { grid-column: 1 / -1; grid-row: 2; }
+  /* title and tag share the first line while they fit; the description always gets its own line */
+  .rows li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 12px; }
+  .rows span:not(.pill) { flex: 1 0 100%; order: 3; }
   .win-bar { padding: 12px 14px; }
   .landing .actions .btn { flex: 1 1 auto; }
 }

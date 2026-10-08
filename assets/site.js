@@ -145,15 +145,21 @@
       if (angle === 90) { lr = e.beta; fb = -e.gamma; } else if (angle === -90 || angle === 270) { lr = -e.beta; fb = e.gamma; }
       if (!rest) { rest = { lr, fb }; tablets.forEach((t) => t.classList.add('tilting')); }
       // measured against however the phone is being held, slowly re-centring
-      rest.lr += (lr - rest.lr) * 0.01; rest.fb += (fb - rest.fb) * 0.01;
+      rest.lr += (lr - rest.lr) * 0.002; rest.fb += (fb - rest.fb) * 0.002;
       tx = Math.max(-1, Math.min(1, (lr - rest.lr) / 22));
       ty = Math.max(-1, Math.min(1, (fb - rest.fb) / 22));
       if (!running) { running = true; requestAnimationFrame(step); }
     };
-    // Listen straight away (Android); iOS only sends motion once allowed, so ask on the first tap
+    // Listen straight away (Android); iOS only sends motion once allowed, and only asks from a real tap
+    // (a scroll doesn't count), so keep asking on taps until there's an answer
     addEventListener('deviceorientation', onTilt);
     if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-      addEventListener('touchend', () => { DeviceOrientationEvent.requestPermission().catch(() => {}); }, { once: true });
+      const ask = () => {
+        DeviceOrientationEvent.requestPermission().then((state) => {
+          if (state === 'granted' || state === 'denied') ['click', 'touchend'].forEach((ev) => removeEventListener(ev, ask, true));
+        }).catch(() => {});
+      };
+      ['click', 'touchend'].forEach((ev) => addEventListener(ev, ask, true));
     }
   }
 
@@ -234,17 +240,28 @@
   const targets = spyLinks.map((a) => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
   if (targets.length && 'IntersectionObserver' in window) {
     const visible = new Map();
-    const spy = new IntersectionObserver((entries) => {
-      entries.forEach((en) => visible.set(en.target.id, en.isIntersecting));
-      const current = targets.find((t) => visible.get(t.id));
+    const atBottom = () => innerHeight + scrollY >= document.documentElement.scrollHeight - 4;
+    const mark = () => {
+      // the last sections are too short to reach the top of the screen, so the bottom of the page counts as the last one
+      const current = atBottom() ? targets[targets.length - 1] : targets.find((t) => visible.get(t.id));
       if (!current) return;
       spyLinks.forEach((a) => {
         const on = a.getAttribute('href') === '#' + current.id;
         a.classList.toggle('is-active', on);
         if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
       });
+    };
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((en) => visible.set(en.target.id, en.isIntersecting));
+      mark();
     }, { rootMargin: '-90px 0px -55% 0px' });
     targets.forEach((t) => spy.observe(t));
+    let queued = false;
+    addEventListener('scroll', () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; mark(); });
+    }, { passive: true });
   }
 
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
