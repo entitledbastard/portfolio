@@ -264,6 +264,34 @@
     }, { passive: true });
   }
 
+  // ---------- Reporting: the redesign wipes across version one as the frame scrolls through ----------
+  // Without GSAP or with reduced motion, --p stays at 1 and the redesign simply shows.
+  const morph = $('[data-morph]');
+  if (morph && !reduced && window.gsap && window.ScrollTrigger) {
+    window.gsap.registerPlugin(window.ScrollTrigger);
+    const set = (p) => {
+      morph.style.setProperty('--p', p.toFixed(4));
+      morph.style.setProperty('--line', p > 0.01 && p < 0.99 ? '1' : '0');
+      morph.style.setProperty('--cap', p > 0.5 ? '1' : '0');
+    };
+    set(0);
+    const state = { p: 0 };
+    window.gsap.to(state, {
+      p: 1, ease: 'none', onUpdate: () => set(state.p),
+      scrollTrigger: { trigger: morph, start: 'top 75%', end: 'center 45%', scrub: 0.5 },
+    });
+  }
+
+  // ---------- Background theme (footer picker), remembered on this device ----------
+  const picks = $$('.bg-pick button');
+  const setBg = (v) => {
+    if (v === 'dusk') delete root.dataset.bg; else root.dataset.bg = v;
+    picks.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+    try { localStorage.setItem('ai-bg', v); } catch (e) {}
+  };
+  picks.forEach((b) => b.addEventListener('click', () => setBg(b.dataset.v)));
+  if (picks.length) setBg(root.dataset.bg || (() => { try { return localStorage.getItem('ai-bg'); } catch (e) { return null; } })() || 'dusk');
+
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 })();
 

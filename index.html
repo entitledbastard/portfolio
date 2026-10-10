@@ -21,12 +21,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=45">
+<link rel="stylesheet" href="assets/site.css?v=51">
 <script>
   // Enable entrance animations only when JS runs; fall back to plain content if scripts fail
   document.documentElement.classList.add('js');
   setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
 </script>
+<script>try { var bg = localStorage.getItem('ai-bg'); if (bg && bg !== 'dusk') document.documentElement.dataset.bg = bg; } catch (e) {}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -67,23 +68,23 @@
   <section class="landing" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-      <p class="hello rise" style="--i:0"><span class="hello-name">Ahmad Ibrahim</span><span class="pill live"><span class="dot"></span>Open to new roles</span><span>Cape Town, South Africa · Canadian citizen · remote</span></p>
+      <p class="hello rise" style="--i:0"><span class="hello-name">Ahmad Ibrahim</span><span class="hello-meta"><span class="open-roles">Open to new roles</span> · Cape Town, South Africa · Canadian citizen · remote</span></p>
       <h1 id="hero-title">
         <span class="line rise" style="--i:1">I design</span>
-        <span class="line rise" style="--i:2"><span class="grad-text">data-heavy</span></span>
+        <span class="line rise" style="--i:2">data-heavy</span>
         <span class="line rise" style="--i:3">product interfaces,</span>
         <span class="line rise" style="--i:4">and build them.</span>
       </h1>
       <p class="lead rise" style="--i:5">I design dashboards and internal tools for technical teams, then build them as working front ends.</p>
       <div class="actions rise" style="--i:6">
-        <a class="btn primary" href="#work">View work <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+        <a class="btn primary" href="#work">View work</a>
         <a class="btn" href="resume.pdf" target="_blank" rel="noopener" data-resume>Download resume</a>
       </div>
       </div>
       <!-- Work first: the strongest, most relevant case study, right in the hero -->
-      <a class="hero-work rise" style="--i:4" href="work/pulsenics/" aria-label="Featured case study: Pulsenics System Software">
-        <div class="monitor"><div class="bezel"><div class="screen"><img src="work/pulsenics/images/screen-experiments.jpg" alt="Pulsenics System Software: the Experiments view, with the hardware tree, tags and a live run in progress" width="1400" height="787"></div></div></div>
-        <span class="hero-tag"><span class="pill live"><span class="dot"></span>In use</span><span><span class="hide-xs">Featured: </span>Pulsenics System Software</span><svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+      <a class="hero-work rise" style="--i:4" href="work/reporting/" aria-label="Featured case study: Internal reporting tools">
+        <div class="monitor"><div class="bezel"><div class="screen"><img src="work/reporting/images/mapping-169.jpg" alt="Concept recreation of the internal reporting tools: our metrics matched to each platform's column names, with bulk mapping on and deal setup in a side panel" width="2040" height="1148"></div></div></div>
+        <span class="hero-tag"><span class="hero-tag-k">Featured</span><span>Internal reporting tools</span><span class="hero-tag-note">Concept recreation, real product under NDA</span></span>
       </a>
     </div>
     <a class="scroll-hint rise" style="--i:7" href="#work">Scroll down to see projects
@@ -100,75 +101,68 @@
         <h2 id="work-title">Selected work</h2>
       </div>
       <div class="win-body" id="work-body"><div class="inner"><div class="pad">
-        <div class="tabs" role="tablist" aria-label="Filter work">
-          <button class="tab" role="tab" aria-selected="true" data-filter="all">All <span class="n"></span></button>
-          <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-filter="product">Product <span class="n"></span></button>
-          <button class="tab" role="tab" aria-selected="false" tabindex="-1" data-filter="web">Web <span class="n"></span></button>
-        </div>
 
         <div class="projects">
-          <!-- 1. Pulsenics System Software -->
+          <!-- 1. Internal reporting tools (featured, NDA, concept recreations) -->
+          <a class="card featured" href="work/reporting/" data-tags="product">
+            <span class="edge" aria-hidden="true"></span>
+            <div class="card-media">
+              <div class="monitor"><div class="bezel"><div class="screen"><img src="work/reporting/images/directory-169.jpg" alt="Concept recreation of the reporting console: partner accounts grouped by company, with a metadata missing flag and setup actions" loading="lazy"></div></div></div>
+            </div>
+            <span class="open" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 13 13 5M7 5h6v6"/></svg></span>
+            <div class="card-body">
+              <h3>Internal reporting tools</h3>
+              <p class="card-note">Screens are concept recreations. The real product is under NDA.</p>
+              <p class="card-ctx"><span><b>Status</b>In use, under NDA</span><span><b>Client</b>Canadian marketing-technology company</span><span><b>Role</b>Designed and built the front ends</span></p>
+              <p>Tools that replaced manual reporting. The team no longer logs in to every source and copies the data into spreadsheets, which saves each person an estimated 10–20 hours a week. Happy to walk you through it in an interview.</p>
+              <div class="tags"><span>Product</span><span>Internal tools</span><span>SQL</span></div>
+            </div>
+          </a>
+          <!-- 2. Pulsenics System Software -->
           <a class="card" href="work/pulsenics/" data-tags="product">
             <span class="edge" aria-hidden="true"></span>
             <div class="card-media">
-              <div class="monitor"><div class="bezel"><div class="screen"><img src="work/pulsenics/images/screen-dashboard.jpg" alt="" loading="lazy"></div></div></div>
+              <div class="monitor"><div class="bezel"><div class="screen"><img src="work/pulsenics/images/screen-dashboard.jpg" alt="Pulsenics System Software dashboard: live experiments with progress bars, two resistance charts, alerts and recent activity" loading="lazy"></div></div></div>
             </div>
             <span class="open" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 13 13 5M7 5h6v6"/></svg></span>
             <div class="card-body">
-              <div class="card-top"><span class="pill live"><span class="dot"></span>In use</span></div>
               <h3>Pulsenics System Software</h3>
-              <p class="card-ctx"><span><b>Client</b>Pulsenics</span><span><b>Product</b>Web app for EIS hardware</span><span><b>Role</b>Product design and UI system, with Marc Varone</span></p>
+              <p class="card-ctx"><span><b>Status</b>In use</span><span><b>Client</b>Pulsenics</span><span><b>Product</b>Web app for EIS hardware</span><span><b>Role</b>Product design and UI system, with Marc Varone</span></p>
               <p>The app Pulsenics' clients use to manage their probes, run experiments and analyse the data. It's part of the company's core offering.</p>
-              <div class="tags"><span class="pill">Product</span><span class="pill">Data viz</span><span class="pill">Design system</span></div>
+              <div class="tags"><span>Product</span><span>Data viz</span><span>Design system</span></div>
             </div>
           </a>
 
-          <!-- 2. Gabion -->
+          <!-- 3. Gabion -->
           <a class="card" href="work/gabion/" data-tags="web">
             <span class="edge" aria-hidden="true"></span>
             <div class="card-media">
-              <div class="monitor"><div class="bezel"><div class="screen"><img src="work/gabion/images/screen-home.jpg" alt="" loading="lazy"></div></div></div>
+              <div class="monitor"><div class="bezel"><div class="screen"><img src="work/gabion/images/screen-home.jpg" alt="Gabion Developments homepage: a couple walking up to a finished modern house" loading="lazy"></div></div></div>
             </div>
             <span class="open" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 13 13 5M7 5h6v6"/></svg></span>
             <div class="card-body">
-              <div class="card-top"><span class="pill live"><span class="dot"></span>Live</span></div>
               <h3>Gabion Developments</h3>
-              <p class="card-ctx"><span><b>Client</b>Toronto design-build firm</span><span><b>Product</b>Marketing site</span><span><b>Role</b>Sole designer and builder</span></p>
+              <p class="card-ctx"><span><b>Status</b>Live, launched 2022</span><span><b>Client</b>Toronto design-build firm</span><span><b>Product</b>Marketing site</span><span><b>Role</b>Sole designer and builder</span></p>
               <p>A site that lets the firm's homes speak first. Designed from scratch and built in Webflow in two months.</p>
-              <div class="tags"><span class="pill">Web</span><span class="pill">IA</span><span class="pill">Webflow</span></div>
+              <div class="tags"><span>Web</span><span>IA</span><span>Webflow</span></div>
             </div>
           </a>
 
-          <!-- 3. Pulsenics website -->
+          <!-- 4. Pulsenics website -->
           <a class="card" href="work/pulsenics-web/" data-tags="web">
             <span class="edge" aria-hidden="true"></span>
             <div class="card-media">
-              <div class="monitor"><div class="bezel"><div class="screen"><img src="work/pulsenics-web/images/screen-home.jpg" alt="" loading="lazy"></div></div></div>
+              <div class="monitor"><div class="bezel"><div class="screen"><img src="work/pulsenics-web/images/screen-home.jpg" alt="pulsenics.com homepage introducing the AccelaGrade battery grading system, with Explore and Download buttons" loading="lazy"></div></div></div>
             </div>
             <span class="open" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 13 13 5M7 5h6v6"/></svg></span>
             <div class="card-body">
-              <div class="card-top"><span class="pill live"><span class="dot"></span>Live</span></div>
               <h3>Pulsenics Website</h3>
-              <p class="card-ctx"><span><b>Client</b>Pulsenics</span><span><b>Product</b>Company site and Knowledge Centre</span><span><b>Role</b>Design, build and upkeep</span></p>
+              <p class="card-ctx"><span><b>Status</b>Live</span><span><b>Client</b>Pulsenics</span><span><b>Product</b>Company site and Knowledge Centre</span><span><b>Role</b>Design, build and upkeep</span></p>
               <p>Ran a workshop with the marketing team that led to an Applications page, where visitors work out which product they need. Also built a Knowledge Centre for publishing what Pulsenics knows about EIS.</p>
-              <div class="tags"><span class="pill">Web</span><span class="pill">IA</span><span class="pill">Webflow CMS</span></div>
+              <div class="tags"><span>Web</span><span>IA</span><span>Webflow CMS</span></div>
             </div>
           </a>
 
-          <!-- 4. Profectus (NDA, no page yet) -->
-          <div class="card" data-tags="product">
-            <span class="edge" aria-hidden="true"></span>
-            <div class="card-media">
-              <div class="monitor"><div class="bezel"><div class="screen nda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Under NDA</div></div></div>
-            </div>
-            <div class="card-body">
-              <div class="card-top"><span class="pill live"><span class="dot"></span>In use</span><span class="pill nda">Under NDA</span></div>
-              <h3>Profectus Group</h3>
-              <p class="card-ctx"><span><b>Client</b>Profectus Group</span><span><b>Product</b>Internal data and reporting tools</span><span><b>Role</b>Designed and built the front ends</span></p>
-              <p>Tools that replaced manual reporting. The team no longer logs in to every source and copies the data into spreadsheets, which saves each person an estimated 10–20 hours a week. Happy to walk you through it in an interview.</p>
-              <div class="tags"><span class="pill">Product</span><span class="pill">Internal tools</span><span class="pill">SQL</span></div>
-            </div>
-          </div>
 
         </div>
       </div></div></div>
@@ -181,7 +175,7 @@
         <h2 id="about-title">About me</h2>
       </div>
       <div class="win-body" id="about-body"><div class="inner"><div class="pad">
-        <p class="lead">I started at Profectus Group in a data role. I learned everything I could about data and database management, ended up owning part of the data funnel, and then used my UX skills to make that work easier. My background is industrial design (OCAD University).</p>
+        <p class="lead">I started in a data role at a Canadian marketing-technology company. I learned everything I could about data and database management, ended up owning part of the data funnel, and then used my UX skills to make that work easier. My background is industrial design (OCAD University).</p>
         <p class="lead" style="margin: 16px 0 22px">The thing I care about most in an interface: when you land on it, it should be clear what it's for and how to use it.</p>
         <ul class="facts">
           <li><b>Focus</b>Data-heavy B2B products and internal tools</li>
@@ -221,8 +215,8 @@
       </div>
       <div class="win-body" id="earlier-body"><div class="inner"><div class="pad">
         <ul class="rows">
-          <li><strong><a href="work/knowledge-leap/" style="color: #fff">Knowledge Leap</a></strong><span>My OCAD University thesis: an open source AR app for Magic Leap that turns your surroundings into lessons.</span><a class="btn sm" href="work/knowledge-leap/" aria-label="View Knowledge Leap">View →</a></li>
-          <li><strong><a href="work/duovillage/" style="color: #fff">DuoVillage</a></strong><span>A group research project: a Duolingo concept for practising real conversations without the social anxiety.</span><a class="btn sm" href="work/duovillage/" aria-label="View DuoVillage">View →</a></li>
+          <li><strong><a href="work/knowledge-leap/" style="color: #fff">Knowledge Leap</a></strong><span>My OCAD University thesis: an open source AR app for Magic Leap that turns your surroundings into lessons.</span><a class="btn sm" href="work/knowledge-leap/" aria-label="View Knowledge Leap">View</a></li>
+          <li><strong><a href="work/duovillage/" style="color: #fff">DuoVillage</a></strong><span>A group research project: a Duolingo concept for practising real conversations without the social anxiety.</span><a class="btn sm" href="work/duovillage/" aria-label="View DuoVillage">View</a></li>
         </ul>
       </div></div></div>
     </section>
@@ -249,14 +243,17 @@
 
     <footer class="foot">
     <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
-    <span>Designed by me, built in Claude Code</span>
+    <span>Designed and built by me</span>
+    <span class="bg-pick" role="group" aria-label="Background"><span>Background</span><button type="button" data-v="dusk" aria-label="Dusk" aria-pressed="true"></button><button type="button" data-v="sunset" aria-label="Sunset" aria-pressed="false"></button><button type="button" data-v="aurora" aria-label="Aurora" aria-pressed="false"></button><button type="button" data-v="ember" aria-label="Ember" aria-pressed="false"></button><button type="button" data-v="night" aria-label="Night" aria-pressed="false"></button></span>
     <span class="foot-links"><a class="btn sm" href="ahmad-ibrahim-portfolio.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5 12 15.5 17 10.5"/><path d="M5 19.5h14"/></svg>Download portfolio (PDF)</a><a href="https://www.linkedin.com/in/ahmadib/" target="_blank" rel="noopener">LinkedIn</a></span>
     <span class="print-only">ahmad.gh.ibrahim@gmail.com · ahmad-ibrahim.com · linkedin.com/in/ahmadib</span>
   </footer>
   </div>
 </main>
 
-<script src="assets/site.js?v=19"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="assets/motion.js?v=2"></script>
+<script src="assets/site.js?v=23"></script>
 <script src="assets/logo3d.js?v=5"></script>
 </body>
 </html>
