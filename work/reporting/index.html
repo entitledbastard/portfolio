@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=51">
+<link rel="stylesheet" href="../../assets/site.css?v=53">
 <script>
   document.documentElement.classList.add('js');
   try { var bg = localStorage.getItem('ai-bg'); if (bg && bg !== 'dusk') document.documentElement.dataset.bg = bg; } catch (e) {}
@@ -104,7 +104,8 @@
         <ul class="facts">
           <li><b>Client</b>Canadian marketing-technology company (under NDA)</li>
           <li><b>Product</b>Internal tools for collecting data and building reports</li>
-          <li><b>My role</b>The only designer, working with front end and back end developers. UI, data flows, data validation and testing</li>
+          <li><b>My role</b>The only designer, working with front end and back end developers. UI and design system, first working builds in Figma Make, data flows, data validation and testing</li>
+          <li><b>Scope</b>Lead a reporting team of three and support a second team of the same size. The tools serve about 12 people across the company's reporting teams. I scope them with the PMO, two developers, a database administrator and infrastructure, and shape dashboards with commercial leads, managers, marketing and people close to the executive team.</li>
           <li><b>Timeline</b>First version shipped late 2023. Redesign shipped in 2025, in about two months</li>
           <li><b>Status</b>In use</li>
         </ul>
@@ -150,7 +151,7 @@
         <h2 id="redesign-title">The redesign, 2025</h2>
       </div>
       <div class="win-body" id="redesign-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 22px">
-        <p class="lead">I redesigned the UI and worked with the developers to build new features. They built it with AI, and it shipped in about two months. The first version took months and was never as good as we needed.</p>
+        <p class="lead">I redesigned the UI and its design system in Figma, then built the first working versions myself in Figma Make. I walked it through the functionality each screen needed, step by step, checked every element it produced and had it go back and fix what wasn't right. I tested the user flow with my team and kept refining with their feedback until we were happy with how it worked. Then we moved the build to Claude Code, where the developers took it to production. It shipped in about two months. The first version took months and was never as good as we needed.</p>
       </div></div></div>
     </section>
 
@@ -164,7 +165,8 @@
           <div class="decision-text">
             <span class="num">01</span>
             <h3>Map one table, and the whole account is mapped</h3>
-            <p>Turn on bulk mapping, and when you assign one of our metrics to a column in one table, the same header is mapped in every other table in the account.</p>
+            <p>Most platforms use a fixed set of headers, so a model recognises their columns automatically, even when the wording varies a little. Bulk mapping is for the platforms that let owners write their own headers and build their own tables.</p>
+            <p>Copying a mapping from one account to another doesn't work, because no two accounts are set up alike. So the user maps a header's wording once, and the tool applies it to every other table in the account that uses the same wording. The first version shipped without this because there wasn't time to build it; AI made it quick to add in the redesign.</p>
           </div>
           <figure class="shot fit reveal"><img src="images/mapping.jpg?v=4" alt="Concept recreation of the mapping screen: our metrics matched to their column names, with bulk mapping switched on for all 49 tables and deal setup in a side panel" loading="lazy"><figcaption>Bulk mapping on. Concept recreation. Real product under NDA.</figcaption></figure>
         </div>
@@ -173,7 +175,7 @@
           <div class="decision-text">
             <span class="num">02</span>
             <h3>One deal setup for many campaigns</h3>
-            <p>Search campaigns by their deal, select them, and apply one deal setup to all of them.</p>
+            <p>Search campaigns by their deal, select them, and apply one deal setup to all of them. Some accounts set deals per table and others per campaign, so the same screen covers both: tick individual campaigns or tables, select everything a search returns, or leave the search empty to set a deal for the whole account.</p>
           </div>
           <figure class="shot fit reveal"><img src="images/deals.jpg?v=4" alt="Concept recreation of the deals screen: campaigns filtered by deal, all selected, with a bar to apply one deal setup to 12 campaigns" loading="lazy"><figcaption>Bulk deal edit. Concept recreation. Real product under NDA.</figcaption></figure>
         </div>
@@ -183,7 +185,7 @@
             <span class="num">03</span>
             <h3>A notification centre that keeps data collection running</h3>
             <p>It flags anything that would stop data coming in: login errors, such as wrong credentials on a platform we read through web scraping instead of an API; a table that changed and needs its columns remapped; a new deal that needs setting up and mapping.</p>
-            <p>Each notification takes you straight to the account setup or mapping screen where the fix happens.</p>
+            <p>Before, a Slack bot posted each issue and someone had to react to the message to mark it done, so there was never a clear view of what was still open. Now each notification takes you straight to the account setup or mapping screen where the fix happens, and clears itself once it's fixed, ignored or dismissed.</p>
           </div>
           <figure class="shot fit reveal"><img src="images/notifs.jpg?v=4" alt="Concept recreation of the notification centre: open login, mapping and new deal issues, filtered by type, each with a link to the screen where it's fixed" loading="lazy"><figcaption>The notification centre. Concept recreation. Real product under NDA.</figcaption></figure>
         </div>
@@ -195,6 +197,7 @@
             <p>Some platforms let account owners rename and move any column, so the only reliable way to match their columns to our metrics is for a person to assign them.</p>
             <p>Some give total revenue but no commission column, so you have to calculate it yourself. Deals can vary within the same platform, and sales sometimes structure a deal differently from how it appears in the platform. That's why deal setup has to be fully flexible.</p>
             <p>Some platforms limit how many calls you can make, so the daily loader pulls data at a custom rate for each one.</p>
+            <p>We did try fixing things at the source, by getting some platforms to switch on API access and asking account owners to change how their accounts are set up. But the accounts belong to our partners, not to us, so we rarely get a say in how a platform works. The tools had to handle the variety instead.</p>
           </div>
           <figure class="dia reveal">
             <span class="dia-h">Three platforms, one set of metrics</span>
@@ -211,7 +214,8 @@
           <div class="decision-text">
             <span class="num">05</span>
             <h3>Check it against the old reports</h3>
-            <p>We ran the new reports next to the old ones and compared them line by line before switching over. My team and I signed off.</p>
+            <p>We ran the new reports alongside the old ones on historical data and compared them line by line. The data was only released for company use once accuracy passed an agreed threshold and was approved. My team and I signed off.</p>
+            <p>Checking didn't stop at launch. The team rotates through accounts and checks the data routinely, and each round comes back more accurate: the notification centre catches the big issues, and most small gaps now come from the platforms rather than our side. Next, I'd flag unusual numbers automatically, so the team can check data after the fact instead of checking everything up front.</p>
           </div>
           <figure class="dia reveal">
             <span class="dia-h">Old report and new report, side by side</span>
@@ -239,8 +243,9 @@
       <div class="win-body" id="outcome-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 22px">
         <ul class="points">
           <li><span class="k">Time</span><div><h3>An estimated 10–20 hours a week saved</h3><p>For each person on the reporting team, because nobody logs in to sources and pastes data into spreadsheets any more.</p></div></li>
-          <li><span class="k">Quality</span><div><h3>Fewer errors and manual fixes, and faster reports</h3><p>With lower resource use.</p></div></li>
+          <li><span class="k">Quality</span><div><h3>Fewer errors and manual fixes, and faster reports</h3><p>We know from our QA. Human error used to be common; now the automation collects the data and a person who understands it checks it. It also takes fewer people to run.</p></div></li>
           <li><span class="k">Upkeep</span><div><h3>Bugs get caught and fixed faster</h3><p>Thanks to the notification centre and the shorter build cycle. Most changes now are small improvements the team asks for.</p></div></li>
+          <li><span class="k">Team</span><div><h3>My team moved from data entry to QA</h3><p>As the tools took over collecting the data, I moved my team from manual data entry to quality assurance. I got them SQL training so they could query the database and check the data themselves.</p></div></li>
         </ul>
       </div></div></div>
     </section>
@@ -302,7 +307,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
 <script src="../../assets/motion.js?v=2"></script>
-<script src="../../assets/site.js?v=23"></script>
+<script src="../../assets/site.js?v=24"></script>
 <script src="../../assets/logo3d.js?v=5"></script>
 </body>
 </html>

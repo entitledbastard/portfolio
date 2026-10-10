@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=51">
+<link rel="stylesheet" href="../../assets/site.css?v=53">
 <script>
   document.documentElement.classList.add('js');
   try { var bg = localStorage.getItem('ai-bg'); if (bg && bg !== 'dusk') document.documentElement.dataset.bg = bg; } catch (e) {}
@@ -190,8 +190,8 @@
           <div class="decision-text">
             <span class="num">01</span>
             <h3>Mirror the physical setup</h3>
-            <p>Hardware is chosen from a connected tree that matches how the equipment is actually wired: Facilities, then Test Stations, then Probes, then Channels, with each channel showing how many cells are connected.</p>
-            <p>Selecting any node dims every branch it doesn't belong to, so it's always clear which cells an experiment will touch. Search sits on top for setups too large to scan.</p>
+            <p>There was no interface before this; experiments were set up in code. Hardware is chosen from a connected tree that matches how the equipment is actually wired: Facilities, then Test Stations, then Probes, then Channels, with each channel showing how many cells are connected.</p>
+            <p>Selecting any node dims every branch it doesn't belong to, so it's always clear which cells an experiment will touch. Search sits on top for setups too large to scan. Ticking a probe ticks its whole path, and each channel opens into the cells connected to it, which you can name, so you still know where everything is across several probes.</p>
           </div>
           <figure class="shot fit reveal" style="display: flex; flex-direction: column; gap: 12px">
             <img src="images/hardware-tree.png" alt="Hardware Selection tree: two facilities branching into test stations, probes and CMU channels, each showing 1 cell connected" loading="lazy">
@@ -204,7 +204,7 @@
           <div class="decision-text">
             <span class="num">02</span>
             <h3>Make starting an experiment one decision</h3>
-            <p>Once hardware is picked, starting is a small pop-up: a start and end time, with two shortcuts for the most common cases, <em>Start Now</em> and <em>No specified end time</em>.</p>
+            <p>Once hardware is picked, starting is a small pop-up: a start and end time, with two shortcuts for the most common cases, <em>Start Now</em> and <em>No specified end time</em>. It can stay that small because the real setup happens before it: choosing hardware and cells, adding tags and setting the controls. By the time you start, the only question left is when.</p>
           </div>
           <figure class="shot fit reveal"><img src="images/start-experiment.png?v=2" alt="Start Experiment pop-up with start and end date and time fields, Start Now and No specified end time checkboxes, and a Start Experiment button" loading="lazy"><figcaption>Start Experiment</figcaption></figure>
         </div>
@@ -213,7 +213,7 @@
           <div class="decision-text">
             <span class="num">03</span>
             <h3>Give direct control of the instrument</h3>
-            <p>Probe controls expose what the hardware actually does: choose a probe, set the time between samples, switch between galvanostatic and potentiostatic mode, and enter up to ten frequency and amplitude pairs.</p>
+            <p>Probe controls expose what the hardware actually does: choose a probe, set the time between samples, switch between galvanostatic and potentiostatic mode, and enter up to ten frequency and amplitude pairs. The engineers wanted the frequency and amplitude pairs entered in order, so they're a numbered list of fields rather than separate settings screens.</p>
             <p><em>Send Controls</em> and a red <em>Stop Sampling</em> sit together at the end, so the safe way out is always visible. Tabs keep the controls history, alerts and maintenance logs one click away.</p>
           </div>
           <figure class="shot fit reveal"><img src="images/probe-controls-tabs.png" alt="Probe controls with tabs for Current Controls, Controls History, Alerts and Maintenance Reset Logs; time between samples, galvanostatic or potentiostatic mode, ten frequency and amplitude rows, and Send Controls and Stop Sampling buttons at the bottom right" loading="lazy"><figcaption>Probe controls</figcaption></figure>
@@ -223,7 +223,7 @@
           <div class="decision-text">
             <span class="num">04</span>
             <h3>Keep running work in view</h3>
-            <p>Live experiments get their own table with facility, test station, probe, timing and a progress bar, plus quick actions to open, duplicate or delete. Once a run finishes, it moves to Saved Experiments, so the live table only shows what's actually running.</p>
+            <p>Live experiments get their own table with facility, test station, probe, timing and a progress bar, plus quick actions to open, duplicate or delete. Once a run finishes, it moves to Saved Experiments, so the live table only shows what's actually running. Running and finished experiments are kept apart on purpose.</p>
           </div>
           <figure class="shot fit reveal"><img src="images/live-experiments.png" alt="Live Experiments table with four rows and progress bars" loading="lazy"><figcaption>Live experiments</figcaption></figure>
         </div>
@@ -232,7 +232,7 @@
           <div class="decision-text">
             <span class="num">05</span>
             <h3>Work with the data in one place</h3>
-            <p>Every graph shows its full hardware path at the top. You always know which cell you're looking at. If something odd shows up, you can select that range and save it as a tagged <em>Event</em>. The whole team can find it later.</p>
+            <p>Every graph shows its full hardware path at the top. You always know which cell you're looking at. If something odd shows up, you can select that range and save it as a tagged <em>Event</em>. The whole team can find it later. Analysis sits next to the data, so you can work with it as soon as it arrives instead of exporting it first. Export is still there, but the built-in tools flag anomalies and let you tag events to points in time.</p>
             <p>Adding a visualization reuses the hardware tree, then groups the data the way electrochemists think about it: electrochemical, frequency domain and time domain. Analysis tools such as correlation, regression and moving averages sit in the same app, each opening in its own tab.</p>
           </div>
           <figure class="shot fit reveal" style="display: flex; flex-direction: column; gap: 12px">
@@ -290,6 +290,7 @@
           <li class="solo"><div><h3>Contrast</h3><p>Secondary text and column headers sit close to the panel colour. I'd raise them to meet WCAG AA, which matters for people staring at data all day.</p></div></li>
           <li class="solo"><div><h3>Inputs on dark</h3><p>The light input fields are the brightest thing on screen. A darker field with a clear focus ring would keep attention on the data.</p></div></li>
           <li class="solo"><div><h3>Hierarchy</h3><p>Most panels carry the same visual weight. Giving live data more presence than setup controls would help scanning.</p></div></li>
+          <li class="solo"><div><h3>Measurement</h3><p>I'd start measuring how long it takes to set up an experiment, and how often engineers have to step in to help, to find where the flow still slows people down.</p></div></li>
         </ul>
       </div></div></div>
     </section>
@@ -303,7 +304,7 @@
       <div class="win-body" id="cr-body"><div class="inner"><div class="pad contact">
         <div style="flex: 1 1 360px">
           <h2 id="cr-title" class="h-lg">Designed with Marc Varone</h2>
-          <p class="lead" style="margin-top: 10px">Pulsenics System Software was designed by two of us. See more of Marc's work at <a href="https://www.marcvarone.com/" style="color: #fff">marcvarone.com</a>.</p>
+          <p class="lead" style="margin-top: 10px">Pulsenics System Software was designed by two of us. We worked through every decision together, so the ideas on this page are shared. See more of Marc's work at <a href="https://www.marcvarone.com/" style="color: #fff">marcvarone.com</a>.</p>
         </div>
         <div class="actions">
           <a class="btn primary" href="../pulsenics-web/">Next: Pulsenics Website</a>
@@ -346,7 +347,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
 <script src="../../assets/motion.js?v=2"></script>
-<script src="../../assets/site.js?v=23"></script>
+<script src="../../assets/site.js?v=24"></script>
 <script src="../../assets/logo3d.js?v=5"></script>
 </body>
 </html>
