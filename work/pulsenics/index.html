@@ -21,9 +21,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=45">
+<link rel="stylesheet" href="../../assets/site.css?v=51">
 <script>
   document.documentElement.classList.add('js');
+  try { var bg = localStorage.getItem('ai-bg'); if (bg && bg !== 'dusk') document.documentElement.dataset.bg = bg; } catch (e) {}
   setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
 </script>
 </head>
@@ -64,16 +65,15 @@
   <section class="landing short" aria-labelledby="cs-title">
     <div class="wrap">
       <p class="crumbs rise" style="--i:0"><a href="../../#work">← All work</a></p>
-      <div class="card-top rise" style="--i:1; margin-bottom: 18px">
-        <span class="pill live"><span class="dot"></span>In use</span>
-        <span class="pill">Product design</span>
-        <span class="pill">Web app</span>
-        <span class="pill">Design system</span>
-      </div>
+      <dl class="spec rise" style="--i:1">
+        <div><dt>Status</dt><dd>In use</dd></div>
+        <div><dt>Work</dt><dd>Product design, design system</dd></div>
+        <div><dt>Product</dt><dd>Web app</dd></div>
+      </dl>
       <h1 id="cs-title" class="rise" style="--i:2">Pulsenics System Software</h1>
       <p class="lead rise" style="--i:3">The web app Pulsenics and its clients use to manage their testing hardware, run experiments, control probes and analyse electrochemical data.</p>
       <div class="actions rise" style="--i:4">
-        <a class="btn primary" href="#overview">Read the case study <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 3v12M4 10l5 5 5-5"/></svg></a>
+        <a class="btn primary" href="#overview">Read the case study</a>
         <a class="btn" href="https://www.pulsenics.com/">About Pulsenics ↗</a>
       </div>
     </div>
@@ -93,7 +93,7 @@
         <div class="grid-3">
           <div class="tile"><span class="num">Before</span><h3>Code sent straight to the probes</h3><p>The team ran experiments from testbed software, sending commands to the hardware in code.</p></div>
           <div class="tile"><span class="num">What we did</span><h3>Made those steps visual</h3><p>We met the engineers, mapped how their experiments need to run, and designed each part of the app and its UI system.</p></div>
-          <div class="tile"><span class="num">Result</span><h3>Shipped with the product launch</h3><p>Pulsenics' clients use it today as part of the company's core offering.</p></div>
+          <div class="tile"><span class="num">Result</span><h3>Shipped with the product launch</h3><p>Pulsenics' engineers and their clients use it today across battery, hydrogen and fuel cell work.</p></div>
         </div>
         <figure class="shot frame">
           <div class="appshot">
@@ -109,7 +109,7 @@
           <li><b>Client</b>Pulsenics, Toronto</li>
           <li><b>Product</b>Web app for running experiments and managing probes</li>
           <li><b>Team</b>Me and <a href="https://www.marcvarone.com/">Marc Varone</a> (50/50), with Pulsenics' backend team</li>
-          <li><b>My role</b>Product design and the UI system, from the ground up</li>
+          <li><b>My role</b>Product design and the UI system, designed with Marc Varone from the ground up</li>
           <li><b>Timeline</b>Designed from early 2021, shipped a year later</li>
           <li><b>Status</b>In use</li>
         </ul>
@@ -253,7 +253,7 @@
         <h2 id="sys-title">Built as a system</h2>
       </div>
       <div class="win-body" id="sys-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 26px">
-        <p class="lead">Marc and I built the design system alongside the screens. It gave Pulsenics a set of reusable assets and made prototyping much easier.</p>
+        <p class="lead">Marc and I designed the UI system alongside the screens. It gave Pulsenics a set of reusable assets and made prototyping much easier.</p>
 
         <ul class="points">
           <li><span class="k">Sections</span><div><h3>Collapsible, resizable panels</h3><p>Every area of the app (hardware, tags, live and saved experiments, data, visualizations) is a panel that can be opened, closed or resized. Users set the workspace up around what they're working on.</p></div></li>
@@ -306,14 +306,14 @@
           <p class="lead" style="margin-top: 10px">Pulsenics System Software was designed by two of us. See more of Marc's work at <a href="https://www.marcvarone.com/" style="color: #fff">marcvarone.com</a>.</p>
         </div>
         <div class="actions">
-          <a class="btn primary" href="../pulsenics-web/">Next: Pulsenics Website →</a>
+          <a class="btn primary" href="../pulsenics-web/">Next: Pulsenics Website</a>
         </div>
       </div></div></div>
     </section>
 
     <nav class="pager" aria-label="Case study navigation">
       <a class="btn" href="../../#work">← All work</a>
-      <a class="btn primary" href="../pulsenics-web/">Next: Pulsenics Website <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+      <a class="btn primary" href="../pulsenics-web/">Next: Pulsenics Website</a>
     </nav>
   </div>
 
@@ -336,14 +336,17 @@
 
   <footer class="foot">
     <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
-    <span>Designed by me, built in Claude Code</span>
+    <span>Designed and built by me</span>
+    <span class="bg-pick" role="group" aria-label="Background"><span>Background</span><button type="button" data-v="dusk" aria-label="Dusk" aria-pressed="true"></button><button type="button" data-v="sunset" aria-label="Sunset" aria-pressed="false"></button><button type="button" data-v="aurora" aria-label="Aurora" aria-pressed="false"></button><button type="button" data-v="ember" aria-label="Ember" aria-pressed="false"></button><button type="button" data-v="night" aria-label="Night" aria-pressed="false"></button></span>
     <span class="foot-links"><a class="btn sm" href="../../ahmad-ibrahim-portfolio.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5 12 15.5 17 10.5"/><path d="M5 19.5h14"/></svg>Download portfolio (PDF)</a><a href="https://www.linkedin.com/in/ahmadib/" target="_blank" rel="noopener">LinkedIn</a></span>
     <span class="print-only">ahmad.gh.ibrahim@gmail.com · ahmad-ibrahim.com · linkedin.com/in/ahmadib</span>
   </footer>
   </div>
 </main>
 
-<script src="../../assets/site.js?v=19"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="../../assets/motion.js?v=2"></script>
+<script src="../../assets/site.js?v=23"></script>
 <script src="../../assets/logo3d.js?v=5"></script>
 </body>
 </html>
