@@ -7,7 +7,11 @@
 
   // ---------- Preloader, then landing entrance ----------
   const pre = $('.preloader');
+  let started = false;
   function start() {
+    if (started) return;
+    started = true;
+    removeEventListener('keydown', start);
     root.classList.add('ready');
     if (pre) {
       pre.classList.add('done');
@@ -24,6 +28,9 @@
     const minShow = new Promise((r) => setTimeout(r, 1000));
     const loaded = new Promise((r) => (document.readyState === 'complete' ? r() : addEventListener('load', r, { once: true })));
     Promise.race([Promise.all([minShow, loaded]), new Promise((r) => setTimeout(r, 2200))]).then(start);
+    // Impatient visitors can skip it: a click, a tap or any key
+    pre.addEventListener('pointerdown', start, { once: true });
+    addEventListener('keydown', start);
   }
 
   // ---------- Toast ----------
@@ -307,12 +314,3 @@ document.querySelectorAll('.live-embed[data-src]').forEach((btn) => {
   }, { once: true });
 });
 
-// Resume buttons only show once resume.pdf has been uploaded next to index.html
-(function () {
-  const links = document.querySelectorAll('[data-resume]');
-  if (!links.length) return;
-  links.forEach((a) => { a.hidden = true; });
-  fetch('resume.pdf', { method: 'HEAD', cache: 'no-store' })
-    .then((r) => { if (r.ok) links.forEach((a) => { a.hidden = false; }); })
-    .catch(() => {});
-})();
