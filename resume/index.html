@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request my resume | Ahmad Ibrahim</title>
+<meta name="description" content="Request Ahmad Ibrahim's resume. Product designer for data-heavy tools.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#11161B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=53">
+<script>document.documentElement.classList.add('js', 'ready');
+  try { var bg = localStorage.getItem('ai-bg'); if (bg && bg !== 'dusk') document.documentElement.dataset.bg = bg; } catch (e) {}</script>
+</head>
+<body>
+<div class="backdrop" aria-hidden="true"></div>
+
+<header class="topbar">
+  <nav class="dock" aria-label="Main">
+    <a class="logo" href="/" aria-label="Ahmad Ibrahim, home"><img class="logo-mark" src="/assets/brand/logo-glass.svg?v=2" alt="" width="34" height="37"></a>
+    <span class="dock-sep" aria-hidden="true"></span>
+    <a class="dock-btn" href="/" aria-label="Back home" data-tip="Back home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4.5 20 11"/><path d="M6 9.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9.5"/></svg></a>
+  </nav>
+</header>
+
+<main class="landing short request-page">
+  <div class="wrap">
+    <p class="crumbs rise" style="--i:0"><a href="/">← Back to the portfolio</a></p>
+    <h1 class="rise" style="--i:1">Request my resume</h1>
+    <p class="lead rise" style="--i:2">Tell me who you are and the role you're hiring for, and I'll email it to you, usually within a day.</p>
+
+    <form class="win request-form rise" style="--i:3" id="resume-form" novalidate>
+      <div class="win-body"><div class="inner"><div class="pad">
+        <div class="field-grid">
+          <label class="field"><span>Your name</span><input name="name" autocomplete="name" required></label>
+          <label class="field"><span>Work email</span><input name="email" type="email" autocomplete="email" required></label>
+          <label class="field"><span>Company</span><input name="company" autocomplete="organization" required></label>
+          <label class="field"><span>Role you're hiring for</span><input name="role" required></label>
+        </div>
+        <label class="field"><span>Anything else <em>(optional)</em></span><textarea name="note" rows="3"></textarea></label>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="request-actions">
+          <button class="btn primary" type="submit">Send request</button>
+          <span class="request-alt">Or email <a href="mailto:ahmad.gh.ibrahim@gmail.com?subject=Resume%20request">ahmad.gh.ibrahim@gmail.com</a></span>
+        </div>
+        <p class="request-status" role="status" aria-live="polite"></p>
+      </div></div></div>
+    </form>
+  </div>
+</main>
+
+<script>
+// Sends the request to Ahmad by email (Web3Forms). He replies with the resume attached.
+// Until the access key below is filled in, the form opens a pre-written email instead.
+(() => {
+  const ACCESS_KEY = 'ef7fbbbd-1e96-4c69-abfa-1a5b82d7bf0d';
+  const form = document.getElementById('resume-form');
+  const status = form.querySelector('.request-status');
+  const button = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const d = Object.fromEntries(new FormData(form));
+    if (d.botcheck) return;
+    const body = `Name: ${d.name}\nEmail: ${d.email}\nCompany: ${d.company}\nRole: ${d.role}\n\n${d.note || ''}`;
+    if (ACCESS_KEY.startsWith('PASTE')) {
+      location.href = 'mailto:ahmad.gh.ibrahim@gmail.com?subject=' + encodeURIComponent('Resume request: ' + d.company) + '&body=' + encodeURIComponent(body);
+      return;
+    }
+    button.disabled = true; status.textContent = 'Sending…';
+    try {
+      const r = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ access_key: ACCESS_KEY, subject: 'Resume request: ' + d.company + ' (' + d.role + ')', from_name: 'ahmad-ibrahim.com', replyto: d.email, name: d.name, email: d.email, company: d.company, role: d.role, message: d.note || '(none)' }),
+      });
+      const j = await r.json();
+      if (!j.success) throw new Error(j.message);
+      form.classList.add('sent');
+      status.textContent = "Thanks, " + d.name.split(' ')[0] + ". I'll send it to " + d.email + " shortly.";
+    } catch (err) {
+      button.disabled = false;
+      status.innerHTML = 'That didn\'t go through. Please email <a href="mailto:ahmad.gh.ibrahim@gmail.com?subject=Resume%20request">ahmad.gh.ibrahim@gmail.com</a> instead.';
+    }
+  });
+})();
+</script>
+</body>
+</html>
