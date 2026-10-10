@@ -191,7 +191,7 @@
             <span class="num">01</span>
             <h3>Mirror the physical setup</h3>
             <p>There was no interface before this; experiments were set up in code. Hardware is chosen from a connected tree that matches how the equipment is actually wired: Facilities, then Test Stations, then Probes, then Channels, with each channel showing how many cells are connected.</p>
-            <p>Selecting any node dims every branch it doesn't belong to, so it's always clear which cells an experiment will touch. Search sits on top for setups too large to scan. Ticking a probe ticks its whole path, and each channel opens into the cells connected to it, which you can name, so you still know where everything is across several probes.</p>
+            <p>Selecting any node dims every branch it doesn't belong to, so it's always clear which cells an experiment will touch. Search sits on top for setups too large to scan. Ticking a probe ticks its whole path, and each channel opens into the cells connected to it, which you can name, so you still know where everything is across several probes. Every facility, station, probe and channel can be renamed in place, and each probe shows its serial number.</p>
           </div>
           <figure class="shot fit reveal" style="display: flex; flex-direction: column; gap: 12px">
             <img src="images/hardware-tree.png" alt="Hardware Selection tree: two facilities branching into test stations, probes and CMU channels, each showing 1 cell connected" loading="lazy">
@@ -214,7 +214,7 @@
             <span class="num">03</span>
             <h3>Give direct control of the instrument</h3>
             <p>Probe controls expose what the hardware actually does: choose a probe, set the time between samples, switch between galvanostatic and potentiostatic mode, and enter up to ten frequency and amplitude pairs. The engineers wanted the frequency and amplitude pairs entered in order, so they're a numbered list of fields rather than separate settings screens.</p>
-            <p><em>Send Controls</em> and a red <em>Stop Sampling</em> sit together at the end, so the safe way out is always visible. Tabs keep the controls history, alerts and maintenance logs one click away.</p>
+            <p><em>Send Controls</em> and a red <em>Stop Sampling</em> sit together at the end, so the safe way out is always visible. Tabs keep the controls history, alerts and maintenance logs one click away. The maintenance log records who reset a probe, when and why, so a lab can trace any change to its equipment.</p>
           </div>
           <figure class="shot fit reveal"><img src="images/probe-controls-tabs.png" alt="Probe controls with tabs for Current Controls, Controls History, Alerts and Maintenance Reset Logs; time between samples, galvanostatic or potentiostatic mode, ten frequency and amplitude rows, and Send Controls and Stop Sampling buttons at the bottom right" loading="lazy"><figcaption>Probe controls</figcaption></figure>
         </div>
@@ -232,7 +232,7 @@
           <div class="decision-text">
             <span class="num">05</span>
             <h3>Work with the data in one place</h3>
-            <p>Every graph shows its full hardware path at the top. You always know which cell you're looking at. If something odd shows up, you can select that range and save it as a tagged <em>Event</em>. The whole team can find it later. Analysis sits next to the data, so you can work with it as soon as it arrives instead of exporting it first. Export is still there, but the built-in tools flag anomalies and let you tag events to points in time.</p>
+            <p>Every graph shows its full hardware path at the top. You always know which cell you're looking at. If something odd shows up, you can select that range and save it as a tagged <em>Event</em>. The whole team can find it later. Events can also be automated: set a rule such as when a variable reaches a value, and the software flags it for you. Data uploaded from outside the probes sits in the same tables and filters as live probe data. Analysis sits next to the data, so you can work with it as soon as it arrives instead of exporting it first. Export is still there, but the built-in tools flag anomalies and let you tag events to points in time.</p>
             <p>Adding a visualization reuses the hardware tree, then groups the data the way electrochemists think about it: electrochemical, frequency domain and time domain. Analysis tools such as correlation, regression and moving averages sit in the same app, each opening in its own tab.</p>
           </div>
           <figure class="shot fit reveal" style="display: flex; flex-direction: column; gap: 12px">
