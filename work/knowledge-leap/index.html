@@ -21,12 +21,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=45">
-<link rel="stylesheet" href="kl.css?v=4">
+<link rel="stylesheet" href="../../assets/site.css?v=51">
+<link rel="stylesheet" href="kl.css?v=5">
 <script>
   document.documentElement.classList.add('js');
+  try { var bg = localStorage.getItem('ai-bg'); if (bg && bg !== 'dusk') document.documentElement.dataset.bg = bg; } catch (e) {}
   setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
 </script>
+<link rel="preload" as="image" href="media/connected-city.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="media/living-room.jpg">
 </head>
 <body class="kl">
 <a class="skip" href="#main">Skip to content</a>
@@ -70,11 +73,11 @@
       <img class="logo-float rise" style="--i:0" src="media/logo.png" alt="Knowledge Leap logo: a hexagonal globe">
       <h1 id="kl-title" class="rise" style="--i:1">Knowledge Leap</h1>
       <p class="lead rise" style="--i:2">A new way to see the world. An open source augmented reality app that turns everyday surroundings into something you can learn from.</p>
-      <div class="card-top rise" style="--i:3">
-        <span class="pill">OCAD University thesis</span>
-        <span class="pill">AR concept</span>
-        <span class="pill">Built for Magic Leap</span>
-      </div>
+      <dl class="spec rise" style="--i:3">
+        <div><dt>Type</dt><dd>OCAD University thesis</dd></div>
+        <div><dt>Work</dt><dd>AR concept</dd></div>
+        <div><dt>Platform</dt><dd>Magic Leap</dd></div>
+      </dl>
     </div>
     <a class="scroll-hint rise" style="--i:5" href="#imagine">Scroll down to leap in
       <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 3v12M4 10l5 5 5-5"/></svg>
@@ -86,9 +89,9 @@
     <div class="story-stage">
       <div class="story-card">
         <div class="room">
-          <img src="media/living-room.jpg" alt="">
+          <img src="media/living-room.jpg" fetchpriority="high" decoding="async" alt="A living room with a TV on the wall between two bookshelves">
           <div class="tv">
-            <img class="city" src="media/connected-city.jpg" alt="A city at night with light trails arcing between buildings">
+            <img class="city" src="media/connected-city.jpg" fetchpriority="high" decoding="async" alt="A city at night with light trails arcing between buildings">
             <div class="panel"><img src="media/magic-leap-headset.jpg" alt="A person smiling while wearing a Magic Leap headset"></div>
             <div class="panel"><img src="media/magicverse.jpg?v=2" alt="Magic Leap's Magicverse diagram: digital layers for entertainment, communications, health, energy and mobility stacked over a city"></div>
             <div class="panel"><img src="media/spatial-understanding.jpg" alt="A street scene with boxes labelling each person and object the camera has recognised"></div>
@@ -236,7 +239,7 @@
         <button class="xbtn" aria-controls="film-body" aria-expanded="true"><i></i><i></i></button>
         <h2 id="film-title">The concept film</h2>
         <span class="spacer"></span>
-        <span class="meta-r"><span class="pill">1:31</span></span>
+        <span class="meta-r">1:31</span>
       </div>
       <div class="win-body" id="film-body"><div class="inner"><div class="pad">
         <button class="film" data-yt="GE6dyWhyHm8" aria-label="Play the Knowledge Leap concept film on YouTube">
@@ -264,20 +267,25 @@
 
     <nav class="pager" aria-label="Project navigation">
       <a class="btn" href="../../#earlier">← All work</a>
-      <a class="btn primary" href="../duovillage/">Next: DuoVillage <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+      <a class="btn primary" href="../duovillage/">Next: DuoVillage</a>
     </nav>
 
     <footer class="foot">
     <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
-    <span>Designed by me, built in Claude Code</span>
+    <span>Designed and built by me</span>
+    <span class="bg-pick" role="group" aria-label="Background"><span>Background</span><button type="button" data-v="dusk" aria-label="Dusk" aria-pressed="true"></button><button type="button" data-v="sunset" aria-label="Sunset" aria-pressed="false"></button><button type="button" data-v="aurora" aria-label="Aurora" aria-pressed="false"></button><button type="button" data-v="ember" aria-label="Ember" aria-pressed="false"></button><button type="button" data-v="night" aria-label="Night" aria-pressed="false"></button></span>
     <span class="foot-links"><a class="btn sm" href="../../ahmad-ibrahim-portfolio.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5 12 15.5 17 10.5"/><path d="M5 19.5h14"/></svg>Download portfolio (PDF)</a><a href="https://www.linkedin.com/in/ahmadib/" target="_blank" rel="noopener">LinkedIn</a></span>
     <span class="print-only">ahmad.gh.ibrahim@gmail.com · ahmad-ibrahim.com · linkedin.com/in/ahmadib</span>
   </footer>
   </div>
 </main>
 
-<script src="../../assets/site.js?v=19"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="../../assets/motion.js?v=2"></script>
+<script src="../../assets/site.js?v=23"></script>
 <script src="../../assets/logo3d.js?v=5"></script>
-<script src="kl.js?v=5"></script>
+<script src="kl.js?v=7"></script>
 </body>
 </html>

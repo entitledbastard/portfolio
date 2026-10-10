@@ -21,9 +21,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Lato:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=45">
+<link rel="stylesheet" href="../../assets/site.css?v=51">
 <script>
   document.documentElement.classList.add('js');
+  try { var bg = localStorage.getItem('ai-bg'); if (bg && bg !== 'dusk') document.documentElement.dataset.bg = bg; } catch (e) {}
   setTimeout(function () { var d = document.documentElement; if (!d.classList.contains('ready')) d.classList.remove('js'); }, 3500);
 </script>
 </head>
@@ -64,15 +65,15 @@
   <section class="landing short" aria-labelledby="cs-title">
     <div class="wrap">
       <p class="crumbs rise" style="--i:0"><a href="../../#work">← All work</a></p>
-      <div class="card-top rise" style="--i:1; margin-bottom: 18px">
-        <span class="pill live"><span class="dot"></span>Live</span>
-        <span class="pill">Website design &amp; build</span>
-        <span class="pill">Webflow</span>
-      </div>
+      <dl class="spec rise" style="--i:1">
+        <div><dt>Status</dt><dd>Live</dd></div>
+        <div><dt>Work</dt><dd>Website design and build</dd></div>
+        <div><dt>Platform</dt><dd>Webflow</dd></div>
+      </dl>
       <h1 id="cs-title" class="rise" style="--i:2">Gabion Developments</h1>
       <p class="lead rise" style="--i:3">A marketing site for a Toronto design-build firm. It puts their finished homes up front and makes booking a call the obvious next step.</p>
       <div class="actions rise" style="--i:4">
-        <a class="btn primary" href="https://www.gabiondevelopments.com">Visit the live site <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 13 13 5M7 5h6v6"/></svg></a>
+        <a class="btn primary" href="https://www.gabiondevelopments.com">Visit the live site</a>
         <a class="btn" href="#overview">Read the case study</a>
       </div>
     </div>
@@ -89,11 +90,7 @@
         <h2 id="ov-title">Overview</h2>
       </div>
       <div class="win-body" id="ov-body"><div class="inner"><div class="pad" style="display: flex; flex-direction: column; gap: 24px">
-        <div class="grid-3">
-          <div class="tile"><span class="num">Brief</span><h3>Their work, front and centre</h3><p>A site in the firm's own style that markets its homes and gives people a professional way to reach them.</p></div>
-          <div class="tile"><span class="num">What I did</span><h3>Designed and built it alone</h3><p>Structure, visual design and a responsive Webflow build, in two months, with the owners and their marketing lead.</p></div>
-          <div class="tile"><span class="num">Result</span><h3>Launched in 2022</h3><p>The client loved it. It looked like their work, and the homes do the selling.</p></div>
-        </div>
+        <p class="lead">A site in the firm's own style that markets its homes and gives people a professional way to reach them. I designed and built it alone: structure, visual design and a responsive Webflow build, in two months, with the owners and their marketing lead. It launched in 2022. The client loved it. It looked like their work, and the homes do the selling.</p>
         <figure class="shot frame sunset">
           <div class="hero-shot">
             <img src="images/home-hero.jpg" alt="Gabion Developments homepage on desktop: dark navigation bar above a video of a finished living room that fills the page">
@@ -305,7 +302,7 @@
 
     <nav class="pager" aria-label="Case study navigation">
       <a class="btn" href="../../#work">← All work</a>
-      <a class="btn primary" href="../knowledge-leap/">Next: Knowledge Leap <svg class="arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+      <a class="btn primary" href="../knowledge-leap/">Next: Knowledge Leap</a>
     </nav>
   </div>
 
@@ -328,14 +325,17 @@
 
   <footer class="foot">
     <span>© <span data-year>2026</span> Ahmad Ibrahim</span>
-    <span>Designed by me, built in Claude Code</span>
+    <span>Designed and built by me</span>
+    <span class="bg-pick" role="group" aria-label="Background"><span>Background</span><button type="button" data-v="dusk" aria-label="Dusk" aria-pressed="true"></button><button type="button" data-v="sunset" aria-label="Sunset" aria-pressed="false"></button><button type="button" data-v="aurora" aria-label="Aurora" aria-pressed="false"></button><button type="button" data-v="ember" aria-label="Ember" aria-pressed="false"></button><button type="button" data-v="night" aria-label="Night" aria-pressed="false"></button></span>
     <span class="foot-links"><a class="btn sm" href="../../ahmad-ibrahim-portfolio.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5 12 15.5 17 10.5"/><path d="M5 19.5h14"/></svg>Download portfolio (PDF)</a><a href="https://www.linkedin.com/in/ahmadib/" target="_blank" rel="noopener">LinkedIn</a></span>
     <span class="print-only">ahmad.gh.ibrahim@gmail.com · ahmad-ibrahim.com · linkedin.com/in/ahmadib</span>
   </footer>
   </div>
 </main>
 
-<script src="../../assets/site.js?v=19"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="../../assets/motion.js?v=2"></script>
+<script src="../../assets/site.js?v=23"></script>
 <script src="../../assets/logo3d.js?v=5"></script>
 </body>
 </html>
